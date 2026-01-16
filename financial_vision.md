@@ -76,6 +76,17 @@ cars/telecom/power. The money in "space" becomes meaningful when you also operat
 internet/data services** at scale — which is why I modeled "space" as a broader satcom/services line,
 not just launches. ([Space Foundation][7])
 
+## 4) Compensation fairness and founder pay (ratio-bound)
+
+TOOO’s surplus returns to users and workers, and compensation is bounded by the published pay ratio
+policy rather than any special founder dividend. This makes founder compensation a shared prosperity
+story: if the Founder’s pay rises, median pay rises too.
+
+Simple math (using a 10× highest-to-median ratio):
+- If median total compensation is **$120k**, max total compensation is **$1.2M**.
+- If median total compensation is **$200k**, max total compensation is **$2.0M**.
+- If the Founder (or any executive) is targeted at **$X**, the median must be at least **$X / 10**.
+
 ---
 
 [1]: https://www.bain.com/insights/quarterly-automotive-insights-2025-q3/

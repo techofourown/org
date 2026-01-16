@@ -12,3 +12,4 @@ This folder contains a draft set of founding documents for **Tech of Our Own**.
 **Notes**
 - These are plain-English governing documents meant to be translated into formal legal documents.
 - Membership identification mechanics are intentionally left open. A separate “Membership Policy” can be adopted later by the Board (within the Constitution’s guardrails).
+- **Story:** User + worker governed. Surplus returns to users and workers. No founder toll. Pay is capped by a published ratio.

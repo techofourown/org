@@ -9,4 +9,6 @@ We do this by:
 - Refusing dependency business models: **no subscriptions**, no hostage mechanics, no selling user data.
 - Structuring governance so **users and workers are represented and benefit**—and so the company cannot quietly drift into becoming “them.”
 
+Surplus returns to users and workers, there is no founder toll, and compensation is capped by a published ratio.
+
 Our first flagship product is **OurBox**, and the mission extends to any future product category where people need technology that respects them.

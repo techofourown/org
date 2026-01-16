@@ -47,14 +47,17 @@ A summary of executive session topics should be recorded without disclosing sens
 - All Stewards must disclose material conflicts (vendor ties, competing businesses, significant personal benefit).
 - A conflicted Steward must recuse from votes where the conflict is material.
 - The Chair ensures recusals are recorded.
+- Founder compensation requires committee recommendation, Board approval in executive session, and recorded Founder recusal.
 
 ## 8) Committees (lightweight)
-The Board maintains three standing committees:
+The Board maintains four standing committees:
 1) **Security & Privacy Committee**
    - ensures security posture, audits, incident response readiness
 2) **Audit & Sustainability Committee**
    - reviews reserves, dividend pool calculation, financial risk
-3) **Governance & Community Committee**
+3) **People & Compensation Committee**
+   - enforces the Compensation Ratio Policy and recommends executive compensation
+4) **Governance & Community Committee**
    - oversees elections, membership policy proposals, transparency
 
 Committees make recommendations; the Board decides.
@@ -65,6 +68,7 @@ The Board publishes at least annually:
 - major votes and policy changes
 - the dividend pool and distributions
 - reserve funding status (met targets: yes/no)
+- a Compensation Ratio Report (ratio number, method, compliance confirmation)
 
 Minutes should be recorded for all meetings. Sensitive details may be redacted for security/privacy.
 
@@ -79,4 +83,3 @@ If the Founder no longer holds the Guardian seat (after 30 years, resignation, o
 - selection must have legitimacy from both Users and Workers
 
 The selection process must be published and must avoid capture by any single constituency.
-

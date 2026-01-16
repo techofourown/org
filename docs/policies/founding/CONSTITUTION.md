@@ -34,12 +34,11 @@ The following are constitutional “never” rules. They are not suggestions.
    TOOO designs for durability, publishes repair guidance where feasible, and supports replacement/repair pathways.
 
 ## 4) Stakeholders and representation
-TOOO recognizes three stakeholder groups:
+TOOO recognizes two stakeholder groups:
 - **Users**: people (or households) who use TOOO products and/or services.
 - **Workers**: employees and long-term contributors who build and maintain TOOO.
-- **Founder**: the founder of TOOO, who holds defined time-limited rights and responsibilities.
 
-Users and Workers are constitutionally recognized stakeholders with representation and benefits as defined below.
+Users and Workers are constitutionally recognized stakeholders with representation and benefits as defined below. The Founder remains a constitutional role with defined responsibilities, but is not a dividend-bearing stakeholder class.
 
 ### 4.1 Membership (intentionally flexible)
 TOOO will maintain a **User membership** and a **Worker membership** for governance and benefits.
@@ -97,12 +96,8 @@ If the Dividend Pool is zero or negative, the dividend for that year is zero.
 
 ### 7.2 Dividend split
 The Dividend Pool is split into:
-- **Founder Dividend**: p(t) of Dividend Pool in year t, declining smoothly from 10% in year 1 to 0% in year 30.
-- The remaining amount (100% − p(t)) is split:
-  - 50% to the **User Dividend Pool**
-  - 50% to the **Worker Dividend Pool**
-
-The Founder Dividend carries **no control rights** and is not transferable to outsiders.
+- 50% to the **User Dividend Pool**
+- 50% to the **Worker Dividend Pool**
 
 ### 7.3 User Dividend
 The User Dividend is paid as a **rebate proportional to eligible spending** (e.g., purchases of products/services), under a privacy-respecting process defined by policy.
@@ -113,23 +108,26 @@ The Worker Dividend is paid via payroll and/or retirement contributions under a 
 ### 7.5 Unclaimed dividends
 Unclaimed dividends are handled by a published claim window. Unclaimed amounts are returned to mission reserves or a member benefit fund, subject to applicable law and policy.
 
-## 8) Transparency
+## 8) Compensation fairness
+TOOO adopts a binding **Compensation Ratio Policy** that limits total compensation disparity and applies to all individuals, including the Founder.
+
+## 9) Transparency
 TOOO will publish, at least annually:
 - Dividend Pool and distributions
 - reserve funding status (met targets: yes/no)
 - high-level financial summary (in plain language)
 - governance report (elections, major votes, and policy changes)
 
-## 9) Amendments
+## 10) Amendments
 Amendments require supermajority approval of both User and Worker membership (by their respective voting processes), plus approval of the Board and Mission Guardian.
 
 Amendments to Section 3 (Non-negotiables) require a higher supermajority threshold (to be set in bylaws) and must be treated as Protected Matters.
 
-## 10) Dissolution and asset lock
+## 11) Dissolution and asset lock
 If TOOO dissolves:
 - open-source licenses remain in effect
 - community-critical trademarks and assets must be transferred to a mission-aligned stewardship entity
 - any patents (if any) must be licensed defensively to prevent enclosure of the commons
 
-## 11) Adoption
+## 12) Adoption
 This Constitution is adopted on the recorded Start Date and governs TOOO from that date forward.
