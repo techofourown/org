@@ -37,6 +37,7 @@ Protected Matters require:
 ## 6) Executive sessions
 The Board may enter executive session (without the CEO) to discuss:
 - CEO performance and compensation
+- Founder compensation
 - sensitive security matters
 - conflicts of interest
 - legal disputes
@@ -49,34 +50,43 @@ A summary of executive session topics should be recorded without disclosing sens
 - The Chair ensures recusals are recorded.
 
 ## 8) Committees (lightweight)
-The Board maintains three standing committees:
+The Board maintains four standing committees:
 1) **Security & Privacy Committee**
    - ensures security posture, audits, incident response readiness
 2) **Audit & Sustainability Committee**
    - reviews reserves, dividend pool calculation, financial risk
 3) **Governance & Community Committee**
    - oversees elections, membership policy proposals, transparency
+4) **People & Compensation Committee**
+   - reviews compensation policy compliance, pay ratio calculations, and founder compensation recommendations
 
 Committees make recommendations; the Board decides.
 
-## 9) Transparency
+## 9) Compensation governance
+- Founder compensation requires:
+  - recommendation from the People & Compensation Committee
+  - Board approval in executive session
+  - Founder recusal recorded in the minutes
+- Compensation Ratio Policy compliance is reviewed annually.
+
+## 10) Transparency
 The Board publishes at least annually:
 - a plain-language governance report
 - major votes and policy changes
 - the dividend pool and distributions
 - reserve funding status (met targets: yes/no)
+- a Compensation Ratio Report (ratio, methodology, and compliance confirmation)
 
 Minutes should be recorded for all meetings. Sensitive details may be redacted for security/privacy.
 
-## 10) Elections (high level)
+## 11) Elections (high level)
 - Users elect User Stewards through the User membership process.
 - Workers elect Worker Stewards through the Worker membership process.
 - Election procedures are specified in a Board-adopted policy and must be simple and privacy-respecting.
 
-## 11) Guardian transition (after founder guardian term)
+## 12) Guardian transition (after founder guardian term)
 If the Founder no longer holds the Guardian seat (after 30 years, resignation, or removal for cause), the Board selects the next Guardian per the Constitution:
 - candidates must be mission-aligned and independent
 - selection must have legitimacy from both Users and Workers
 
 The selection process must be published and must avoid capture by any single constituency.
-

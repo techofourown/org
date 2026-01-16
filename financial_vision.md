@@ -76,6 +76,20 @@ cars/telecom/power. The money in "space" becomes meaningful when you also operat
 internet/data services** at scale — which is why I modeled "space" as a broader satcom/services line,
 not just launches. ([Space Foundation][7])
 
+## 4) Compensation fairness and founder pay (shared prosperity math)
+
+The Constitution sends surplus to users and workers. Founder wealth is earned through **compensation
+under the same pay ratio rule as everyone else**, not through a separate dividend stream. The
+highest total annual compensation (including the Founder) is capped at **10× median total
+compensation** under the Compensation Ratio Policy.
+
+Simple math examples:
+- If median total compensation is **$120k**, maximum total compensation is **$1.2M**.
+- If median total compensation is **$200k**, maximum total compensation is **$2.0M**.
+- If the Founder’s compensation target is **$X**, the median must rise to at least **$X / 10**.
+
+This keeps the story clean: if top compensation rises, the median rises too.
+
 ---
 
 [1]: https://www.bain.com/insights/quarterly-automotive-insights-2025-q3/

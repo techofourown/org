@@ -38,6 +38,7 @@ In particular:
 - No lock-in by removing exportability/interoperability
 - No sale/merger/control-transfer that weakens mission lock
 - No outsider route to control
+- Founder compensation is governed by the Compensation Ratio Policy and determined through the Board process with Founder recusal.
 
 Attempts to relabel prohibited practices (e.g., calling a subscription a “maintenance fee”) are violations.
 

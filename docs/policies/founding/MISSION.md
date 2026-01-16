@@ -8,5 +8,6 @@ We do this by:
 - Designing for long life: repairability, upgrade paths, and long-term support.
 - Refusing dependency business models: **no subscriptions**, no hostage mechanics, no selling user data.
 - Structuring governance so **users and workers are represented and benefit**—and so the company cannot quietly drift into becoming “them.”
+- Returning surplus to users and workers with no founder toll, and keeping pay capped by a published ratio.
 
 Our first flagship product is **OurBox**, and the mission extends to any future product category where people need technology that respects them.
