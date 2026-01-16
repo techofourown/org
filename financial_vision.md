@@ -14,7 +14,19 @@ Your **Dividend Pool margin** could easily be **~1% of revenue or less** if you 
 So: **$41.6B/yr Dividend Pool** can imply **multi-trillion revenue** if your distributable margin is
 under ~1%.
 
-## 2) A concrete "we sell most of everything" mix that hits the math
+## 2) Compensation fairness and founder pay (no founder dividend)
+TOOO’s surplus is returned to users and workers. Founder compensation is handled like any other role:
+it must fit within the Compensation Ratio Policy (10× median total compensation). That makes founder
+comp a shared-prosperity story rather than a separate profit stream.
+
+Simple comp math examples (annual, total compensation):
+- If median comp is **$120k**, the maximum comp is **$1.2M**.
+- If median comp is **$200k**, the maximum comp is **$2.0M**.
+- If the desired founder comp is **$1.5M**, the median must be at least **$150k**.
+
+The incentive is aligned: raising the top requires raising the middle.
+
+## 3) A concrete "we sell most of everything" mix that hits the math
 
 Below is a **Year 25-30 run-rate** mix that generates **~$41.6B/yr Dividend Pool**, while matching
 your stated vibe:
@@ -63,7 +75,7 @@ That is not insane if:
 - you are in regulated-ish arenas (power), and
 - you are capex-heavy (telecom/space).
 
-## 3) The "rocket launches" reality check (because it matters for the mix)
+## 4) The "rocket launches" reality check (because it matters for the mix)
 
 Even if you sell "most launches," launches alone are **not** where the trillion-dollar wealth comes
 from.

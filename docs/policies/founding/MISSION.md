@@ -7,6 +7,6 @@ We do this by:
 - Building in public: open-source by default, auditable security, and shared knowledge.
 - Designing for long life: repairability, upgrade paths, and long-term support.
 - Refusing dependency business models: **no subscriptions**, no hostage mechanics, no selling user data.
-- Structuring governance so **users and workers are represented and benefit**—and so the company cannot quietly drift into becoming “them.”
+- Structuring governance so **users and workers are represented and benefit**, with surplus returning to them under a published pay ratio cap.
 
 Our first flagship product is **OurBox**, and the mission extends to any future product category where people need technology that respects them.
