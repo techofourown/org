@@ -41,6 +41,8 @@ In particular:
 
 Attempts to relabel prohibited practices (e.g., calling a subscription a “maintenance fee”) are violations.
 
+Founder compensation is governed by the Compensation Ratio Policy and is set through a Board process with Founder recusal.
+
 ## 5) Board role during the Founding Stewardship Period
 The Board exists and elections proceed, but the Board’s binding role is limited to:
 - enforcing Protected Matters
