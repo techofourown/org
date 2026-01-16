@@ -2,6 +2,8 @@
 
 This folder contains a draft set of founding documents for **Tech of Our Own**.
 
+**User + worker governed. Surplus returns to users and workers. No founder toll. Pay is capped by a published ratio.**
+
 **Included**
 - **Vision** — [`VISION.md`](VISION.md)
 - **Mission** — [`MISSION.md`](MISSION.md)

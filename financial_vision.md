@@ -14,6 +14,15 @@ Your **Dividend Pool margin** could easily be **~1% of revenue or less** if you 
 So: **$41.6B/yr Dividend Pool** can imply **multi-trillion revenue** if your distributable margin is
 under ~1%.
 
+## 1.1) Surplus allocation and compensation fairness
+
+The Dividend Pool is returned to **users and workers**, with no founder dividend. Founder compensation is treated the same as any other compensation and must remain within the published pay ratio policy.
+
+**Comp math examples (10× median cap):**
+- If median total compensation is **$120k**, the maximum total compensation for any individual (including the Founder) is **$1.2M**.
+- If median total compensation is **$200k**, the maximum is **$2.0M**.
+- If we want the Founder to make **$X**, then the median must be at least **$X / 10**—raising the floor for everyone.
+
 ## 2) A concrete "we sell most of everything" mix that hits the math
 
 Below is a **Year 25-30 run-rate** mix that generates **~$41.6B/yr Dividend Pool**, while matching
