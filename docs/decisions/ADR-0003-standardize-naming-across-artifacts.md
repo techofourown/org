@@ -35,7 +35,7 @@ Concretely, we will apply the following mandatory rules:
      `merch-`, `tool-`, `sec-`, `sandbox-`.
    * Repo names are lowercase, hyphen-separated, and follow
      `"<type>-<scope>-<component>[-<target>][-<variant>]"`.
-   * This rule is the organization-wide standard and is consistent with ADR-0001 (repository naming).
+   * This rule is the organization-wide standard and is consistent with ADR-0002 (repository naming).
 
 2. **Hardware products have a stable marketing name and a separate model identifier**
 
