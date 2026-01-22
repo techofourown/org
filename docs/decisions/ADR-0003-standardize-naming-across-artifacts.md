@@ -40,7 +40,7 @@ Concretely, we will apply the following mandatory rules:
 2. **Hardware products have a stable marketing name and a separate model identifier**
 
    * Marketing name format: `"<Family> <Model> [<Trim>]"` (no platform/vendor names; no years).
-   * Model identifier format: `"TOO-<FAM>-<MODEL>-<GEN>"` (e.g., `TOO-OBX-MINI-01`).
+   * Model identifier format: `"TOO-<FAM>-<MODEL>-<GEN>"` (e.g., `TOO-OBX-MBX-01`).
    * Manufacturing changes are tracked as **revisions** (`Rev A`, `Rev B`, …) without changing
      marketing name or generation unless the platform class changes.
 

@@ -216,7 +216,7 @@ For each `hw-*` repository:
 
 ### 2) Release artifacts: what we publish (normative)
 
-For every hardware release (e.g., `TOO-OBX-MINI-01 Rev A`), publish at minimum:
+For every hardware release (e.g., `TOO-OBX-MBX-01 Rev A`), publish at minimum:
 
 - Preferred-source design files (EDA + CAD originals)
 - Manufacturing outputs (Gerbers, drill files, pick-and-place, assembly drawings)
@@ -231,7 +231,7 @@ We do **not** publish supplier pricing, factory identities, or purchasing terms 
 Where practical, include on-device / packaging / docs:
 
 - a short URL to the exact design release (tag/commit)
-- model identifier + revision (e.g., `TOO-OBX-MINI-01 Rev A`)
+- model identifier + revision (e.g., `TOO-OBX-MBX-01 Rev A`)
 - license notice
 
 This supports “inspectability is a right” in the physical world.

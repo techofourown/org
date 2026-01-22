@@ -148,7 +148,7 @@ The following prefixes are approved for repository names:
 * `fac-techofourown-hq`
 * `sw-ourbox-os`
 * `img-ourbox-mini-rpi`
-* `hw-ourbox-mini`
+* `pf-ourbox`
 * `hw-ourbox-mega`
 * `web-techofourown`
 * `merch-techofourown`
