@@ -1,4 +1,4 @@
-# Ethos Memo: The Seven Signs & The Ancestrels  
+# Ethos Memo: The Eight Signs & The Ancestrels  
 **Org:** Tech of Our Own  
 **Status:** Draft (v0.1)  
 **Owner:** Founder proposal  
