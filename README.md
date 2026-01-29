@@ -25,7 +25,7 @@ https://github.com/techofourown
 ## Repo map (current)
 
 - org-techofourown — governance + policies + decision records (this repo)
-- pf-ourbox — OurBox product family (hardware: Matchbox + Tinderbox)
+- pf-ourbox — OurBox product family
 - sw-ourbox-os — OurBox OS
 - img-ourbox-mini-rpi — bootable image build + publish
 - web-techofourown — website content
