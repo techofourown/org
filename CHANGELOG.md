@@ -3,4 +3,4 @@
 
 ### Bug Fixes
 
-* update example IDs in ADRs to use Matchbox ([feaa7cf](https://github.com/techofourown/org-techofourown/commit/feaa7cf04b396e8059b039b3680cd56837bef90f))
+* update example IDs in ADRs to use updated model tokens ([feaa7cf](https://github.com/techofourown/org-techofourown/commit/feaa7cf04b396e8059b039b3680cd56837bef90f))
