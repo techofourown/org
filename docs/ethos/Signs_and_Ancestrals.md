@@ -62,6 +62,8 @@ Each Sign represents an actionable practice we enter with ourselves and our user
 **Meaning:** Exit must be real. Dependencies must not become cages.  
 **Practice:** Make exit concrete: revoke access, migrate workflows, help others do the same. Reject cookies, delete accounts, opt out. 
 
+---
+
 ### 8) The Sign of Listening  
 **Meaning:** we should listen to each other.  
 **Practice:** Invite others to share, and recieve their words as the gifts that they are.
