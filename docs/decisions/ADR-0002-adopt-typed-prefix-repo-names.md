@@ -75,7 +75,7 @@ restate the org namespace.
 Examples:
 
 - ✅ `sw-ourbox-os` (product token adds clarity)
-- ✅ `img-ourbox-matchbox-rpi` (product token + device role + target)
+- ✅ `img-ourbox-matchbox` (product token + device role)
 - ✅ `tool-av` (org-wide tool; no product token needed)
 - ✅ `pub-studio` (org-wide publications/canonical media artifacts)
 
@@ -166,10 +166,10 @@ new prefixes should be deliberate (via ADR update) rather than ad-hoc.
 
    Examples: `tool-common-av`, `lib-common-crypto`
 
-4) **Images**  
-   ` "img-<product>-<device|role>-<target>[-<variant>]"`
+4) **Images**
+   ` "img-<product>-<device|role>[-<target>][-<variant>]"`
 
-   Examples: `img-ourbox-matchbox-rpi`, `img-ourbox-mini-rpi5-debug`
+   Examples: `img-ourbox-matchbox`, `img-ourbox-tinderbox`, `img-ourbox-mini-rpi5-debug`
 
 5) **Firmware**  
    ` "fw-<product>-<device|role>-<target>[-<variant>]"`
@@ -241,7 +241,8 @@ Preferred examples (new scheme):
 - `sw-ourbox-os`
 - `pf-ourbox`
 - `hw-ourbox-matchbox`
-- `img-ourbox-matchbox-rpi`
+- `img-ourbox-matchbox`
+- `img-ourbox-woodbox`
 - `web-site`
 - `pub-studio`
 - `tool-av`
