@@ -3,7 +3,7 @@
 - **Date:** 2026-01-17
 - **Status:** Draft (Founder proposal; intended to be ratified/amended by members via `CONSTITUTION.md`)
 - **Deciders:** Founder (initial), future Board + Members (ratification/amendment)
-- **Related:** `../policies/founding/VALUES.md` (Declaration of Values)
+- **Related:** `../governance/VALUES.md` (Declaration of Values)
 
 ---
 
@@ -221,7 +221,7 @@ governance action (ADR + member process):
 
 ## References
 
-- `../policies/founding/VALUES.md` (Declaration of Values)
-- `../policies/founding/CONSTITUTION.md`
-- `../policies/founding/BOARD_OPERATIONS.md`
-- `../policies/founding/FOUNDER_STEWARDSHIP.md`
+- `../governance/VALUES.md` (Declaration of Values)
+- `../governance/CONSTITUTION.md`
+- `../governance/BOARD_OPERATIONS.md`
+- `../governance/FOUNDER_STEWARDSHIP.md`

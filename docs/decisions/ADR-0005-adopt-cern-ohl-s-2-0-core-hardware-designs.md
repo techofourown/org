@@ -4,8 +4,8 @@
 - **Status:** Proposed (Founder proposal; intended to be ratified/amended by members via `CONSTITUTION.md`)
 - **Deciders:** Founder (initial), future Board + Members (ratification/amendment)
 - **Related:**
-  - `../policies/founding/VALUES.md` (Declaration of Values)
-  - `../policies/founding/CONSTITUTION.md`
+  - `../governance/VALUES.md` (Declaration of Values)
+  - `../governance/CONSTITUTION.md`
   - `./ADR-0001-adopt-agplv3-core-software.md` (software licensing posture)
 
 ---
@@ -266,8 +266,8 @@ Any of the following require explicit governance action (ADR + member process as
 
 ## References
 
-- `../policies/founding/VALUES.md`
-- `../policies/founding/CONSTITUTION.md`
+- `../governance/VALUES.md`
+- `../governance/CONSTITUTION.md`
 - `./ADR-0001-adopt-agplv3-core-software.md`
 - (Future) Trademark policy document
 - (Future) Hardware Release Checklist / documentation standard

@@ -1,9 +1,9 @@
 # Policies
 
-Use this area for governance, principles, and project-wide standards. The founding documents live in `docs/policies/founding/`.
+Use this area for ongoing organizational rules, constraints, and standards that are enforceable.
 
 Current policies:
-- Compensation Ratio Policy (`docs/policies/compensation/PAY_RATIO_POLICY.md`)
+- Pay Ratio Policy (`PAY_RATIO_POLICY.md`)
 
 Suggested additions:
 - Contribution policies and code of conduct

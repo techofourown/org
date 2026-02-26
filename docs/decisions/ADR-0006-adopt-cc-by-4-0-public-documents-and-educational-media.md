@@ -4,9 +4,9 @@
 - **Status:** Draft (Founder proposal; intended to be ratified/amended by members via `CONSTITUTION.md`)
 - **Deciders:** Founder (initial), future Board + Members (ratification/amendment)
 - **Related:**
-  - `../policies/founding/VALUES.md` (Declaration of Values)
-  - `../policies/founding/CONSTITUTION.md`
-  - `../ethos/Signs_and_Ancestrals.md` (example “commons” ethos doc)
+  - `../governance/VALUES.md` (Declaration of Values)
+  - `../governance/CONSTITUTION.md`
+  - `../ethos/Signs_and_Ancestrals.md` (example "commons" ethos doc)
   - `./ADR-0001-adopt-agplv3-core-software.md` (software licensing posture)
   - `./ADR-0005-adopt-cern-ohl-s-2-0-core-hardware-designs.md` (hardware licensing posture)
 
@@ -87,8 +87,8 @@ for public reuse and adaptation.
 
 This includes (examples, not an exhaustive list):
 
-- root documents like `README.md`, `financial_vision.md`, `CHANGELOG.md`
-- all `docs/` content (policies, founding documents, ADRs, templates, ethos memos, requirements docs)
+- root documents like `README.md`, `CHANGELOG.md`
+- all `docs/` content (governance documents, policies, ADRs, templates, ethos memos, requirements docs)
 
 ### 3) What is out of scope / excluded
 
@@ -214,8 +214,8 @@ This helps prevent confusion when third parties remix or reframe content.
 ## References
 
 - CC BY 4.0 license: https://creativecommons.org/licenses/by/4.0/
-- `../policies/founding/VALUES.md`
-- `../policies/founding/CONSTITUTION.md`
+- `../governance/VALUES.md`
+- `../governance/CONSTITUTION.md`
 - `./ADR-0001-adopt-agplv3-core-software.md`
 - `./ADR-0005-adopt-cern-ohl-s-2-0-core-hardware-designs.md`
 - `../ethos/Signs_and_Ancestrals.md`

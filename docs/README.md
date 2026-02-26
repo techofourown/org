@@ -6,17 +6,21 @@ This directory holds all project documentation, organized by purpose and lifecyc
 
 ```
 docs/
-├── rfcs/          # Pre-decisional exploration and proposals
+├── governance/    # Mission, vision, values, constitution, board operations
+├── policies/      # Organizational principles, standards, and rules
 ├── decisions/     # Architecture Decision Records (ADRs)
-├── policies/      # Governance, standards, and principles (includes founding docs)
+├── rfcs/          # Pre-decisional exploration and proposals
+├── ethos/         # Shared language and cultural principles
 └── requirements/  # System/interface requirements and verification (optional)
 ```
 
 ## When to use what
 
-- **RFCs (`rfcs/`)** — explore ideas or proposals before deciding; capture options, trade-offs, and open questions.
+- **Governance (`governance/`)** — mission lock and power structure (constitution, board rules).
+- **Policies (`policies/`)** — ongoing rules, constraints, and standards that are enforceable.
 - **ADRs (`decisions/`)** — record a decision that was made, with context, rationale, consequences, and links to any originating RFC.
-- **Policies (`policies/`)** — organizational principles and standards; founding documents now live in `docs/policies/founding/`.
+- **RFCs (`rfcs/`)** — explore ideas or proposals before deciding; capture options, trade-offs, and open questions.
+- **Ethos (`ethos/`)** — shared language, principles, and cultural memos.
 - **Requirements (`requirements/`)** — only if you need traceability (system/ICD/verification); otherwise ignore.
 
 ## Flow
