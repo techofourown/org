@@ -1,7 +1,6 @@
 # ADR-0005: Adopt CERN-OHL-S-2.0 for Tech of Our Own core hardware designs
 
 - **Date:** 2026-01-17
-- **Deciders:** Founder (initial), future Board + Members (ratification/amendment)
 - **Related:**
   - `../governance/VALUES.md` (Declaration of Values)
   - `../governance/CONSTITUTION.md`

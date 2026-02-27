@@ -1,7 +1,6 @@
 # ADR-0001: Adopt AGPLv3 for Tech of Our Own core software
 
 - **Date:** 2026-01-17
-- **Deciders:** Founder (initial), future Board + Members (ratification/amendment)
 - **Related:** `../governance/VALUES.md` (Declaration of Values)
 
 ---

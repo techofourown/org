@@ -1,7 +1,6 @@
 # ADR-0006: Adopt CC BY 4.0 for Tech of Our Own public documents and educational media
 
 - **Date:** 2026-01-30
-- **Deciders:** Founder (initial), future Board + Members (ratification/amendment)
 - **Related:**
   - `../governance/VALUES.md` (Declaration of Values)
   - `../governance/CONSTITUTION.md`

@@ -1,7 +1,6 @@
 # ADR-0007: Adopt OCI Artifacts as the Canonical Distribution Substrate (Apps + Platform Components)
 
 - **Date:** 2026-02-26
-- **Deciders:** Founder (initial), future Board + Members (ratification/amendment)
 - **Related:**
   - `ADR-0002-adopt-typed-prefix-repo-names.md`
   - `ADR-0003-standardize-naming-across-artifacts.md`
