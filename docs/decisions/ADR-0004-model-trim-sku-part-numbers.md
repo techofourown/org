@@ -1,7 +1,5 @@
 # ADR-0004: Standardize Hardware Product Identification as Model → Trim → SKU (TOO-prefixed Part Numbers)
 
-## Status
-Accepted
 
 ## Date
 2026-01-29

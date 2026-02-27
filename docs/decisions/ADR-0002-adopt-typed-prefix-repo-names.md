@@ -1,8 +1,5 @@
 # ADR-0002: Adopt Typed Prefix Repository Naming Convention
 
-## Status
-
-Proposed
 
 ## Context
 

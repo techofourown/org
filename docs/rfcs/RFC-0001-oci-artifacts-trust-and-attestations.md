@@ -1,6 +1,4 @@
 # RFC-0001: OCI Artifact Distribution, Trust, and Attestations (Phased Plan)
-
-**Status:** Draft  
 **Created:** 2026-02-26  
 **Updated:** 2026-02-26
 

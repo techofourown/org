@@ -1,8 +1,5 @@
 # ADR-0003: Standardize Naming Across Artifacts Using Typed Prefixes and Stable Identifiers
 
-## Status
-
-Accepted
 
 ## Context
 
