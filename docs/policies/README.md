@@ -6,6 +6,7 @@ Current policies:
 - Pay Ratio Policy (`PAY_RATIO_POLICY.md`)
 - Protected Repositories: PR Required, Review Optional (Single-Author Phase)
   (`PROTECTED_REPOS_PR_NO_REVIEW_POLICY.md`)
+- Protected Branch Release Automation Policy (`PROTECTED_BRANCH_RELEASE_AUTOMATION_POLICY.md`)
 
 Suggested additions:
 - Contribution policies and code of conduct
