@@ -33,7 +33,7 @@ Also included are the **Ancestrels**— archetypal figures that embody each Sign
 Each Sign is an actionable practice we can adopt—individually, in personal relationships, families, groups, teams, and in communities—to keep ourselves and our technology aligned with the human good.
 
 ### 1) The Sign of the Drum  
-**Meaning:** Humans are not machines. Every system should start with the human body and the human good.  
+**Meaning:** Humans are not machines. Every system should start with the human body and the human good, human warmth, and human connection.
 **Practice:** Begin decisions with a “Drum check”:
 - What human good are we serving?
 - What human risk are we introducing?
@@ -44,7 +44,7 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 
 ### 2) The Sign of Gathering
 
-**Meaning:** Our history, memories, and identity are _ours_. They are too precious to scatter across platforms that neither know us nor have our best interests at heart. Gathering is a responsible act of self-respect and self-care, and is a choice to cherish and safeguard what should be in our personal stewardship.
+**Meaning:** Our history, memories, identity, and relationships are _ours_. Gathering is an act of self-respect and self-care, and is a choice to cherish and safeguard that which should be in our personal stewardship.
 **Practice:** Cultivate rituals of care and responsibility around our personal information and story:
 
 * Recognize our history and identity as extensions and manifestations of ourselves, as vital resources, worthy of our protection and respect.
@@ -66,7 +66,7 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 ---
 
 ### 4) The Sign of the Whisper  
-**Meaning:** Privacy and consent are normal. Not everything belongs in public—or in logs.  
+**Meaning:** Privacy and consent are normal. Not everything belongs in public—or in logs. Respect boundaries.
 **Practice:** Treat private communication as a baseline human right:
 - Use end-to-end encryption where appropriate.
 - Minimize data collection.
@@ -75,7 +75,7 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 ---
 
 ### 5) The Sign of Building  
-**Meaning:** We need tools that are inspectable, repairable, and forkable—so users aren’t trapped.  
+**Meaning:** We need tools that are inspectable, repairable, adaptable, and forkable, with clear exit paths, so we arent trapped.
 **Practice:** Build in ways that keep power distributed:
 - Ship small; document well.
 - Prefer reproducible, legible systems over clever opacity.
@@ -84,30 +84,21 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 ---
 
 ### 6) The Sign of Sustaining  
-**Meaning:** The commons only survives if maintenance is funded, respected, and planned.  
-**Practice:** Make long-term care a real line-item:
-- Fund maintenance.
-- Document and triage.
-- Steward reliability and safety over time.
-- Donate, support, sustain—help keep shared tools alive.
+**Meaning:** The commons only survives if stewardship is funded, respected, planned, and shared.
+**Practice:** Contribute materially to projects which rely on donations of time, money, or other resources.
+
 
 ---
 
 ### 7) The Sign of Cleaving  
-**Meaning:** Exit must be real. Dependencies must not become cages.  
-**Practice:** Make leaving possible, safe, and humane:
-- Make export, revocation, and migration concrete.
-- Avoid lock-in defaults; prefer interoperable systems.
-- Help others leave harmful systems when they’re ready.
+**Meaning:** We must build the courage to depart from unhealthy connections, and the boldness to make new healthy connections.
+**Practice:** opt out of harmfull practices, delete accounts from unhealthy platforms, and make use of ethical technology and new human realtionships.
 
 ---
 
 ### 8) The Sign of Listening  
-**Meaning:** Listening is a duty. We learn from each other, especially when we are wrong.  
-**Practice:** Invite others to share, and receive their words as the gifts that they are:
-- Build feedback paths that are safe for the vulnerable and honest for the powerful.
-- Treat critique as data, not betrayal.
-- Respond with repair: acknowledge, change, and follow through.
+**Meaning:** We listen to learn and connect and support each other.
+**Practice:** Physically gather with other humans and take turns listening to what they have to say. Read what others share through the channels thorugh which you are connected. Seek out humans mindfully, rather than accept what the feeds bring.
 
 ---
 
