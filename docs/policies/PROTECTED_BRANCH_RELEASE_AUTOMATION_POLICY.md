@@ -174,3 +174,15 @@ Exceptions are allowed only to remediate release integrity or security issues (e
   * revoke/rotate credentials if applicable
   * reduce permissions/bypass scope to compliant levels
   * disable release automation until controls are restored
+
+## Continuous audit
+
+Repositories using Release App bypass must be included in the organization's
+protected-repository audit (`governance/protected-repos.json` and
+`audit-protected-repos.yml`). That audit must verify that only the approved
+Release App appears in bypass allowances for the designated protected branch(es),
+and that no human users or teams are granted equivalent bypass.
+
+The Release App is the **only** permitted direct-write actor on protected branches.
+Human administrators are not bypass actors and must not be added to bypass
+allowances for human workflows.

@@ -1,10 +1,11 @@
-# Protected Repositories: PR Required, Review Optional (Single-Author Phase)
-**Draft v1.0**
+# Protected Repositories: PR Required, Admin Enforced, No Required Review (Single-Author Phase)
+**Draft v1.2**
 
 ## Purpose
 This policy defines how branch protection is configured during TOOO's current
-single-author operating phase. It preserves change control and auditability
-without creating a fake reviewer requirement when there is only one maintainer.
+single-author operating phase. It enforces a mandatory PR workflow for all human
+changes, preserves a full audit trail, and keeps the sole maintainer unblocked —
+without using bypass mechanisms that defeat the PR requirement itself.
 
 ## Scope
 This policy applies to repositories that are already designated as protected.
@@ -16,36 +17,99 @@ This policy does **not** define:
 Those decisions remain out of scope for this document.
 
 ## Policy
-For protected repositories:
+For protected repositories under GitHub classic branch protection:
 
-1. Pull requests to protected branches are required.
-2. Direct pushes to protected branches are disallowed.
-3. Required approving reviews are set to `0` while TOOO is operated by a single
-   author.
-4. Required status checks may still be enforced independently.
-5. Admin enforcement on protected branches may remain enabled.
+1. Pull requests to protected branches are required for all human changes.
+2. Direct human pushes to protected branches are disallowed.
+3. Admin enforcement (`enforce_admins`) must be **enabled**. Admins are subject to
+   the same PR requirement as all other contributors.
+4. Required approving reviews are set to `0`. The sole maintainer may merge their
+   own PR without a second reviewer.
+5. Required status checks may still be enforced independently.
+6. `bypass_pull_request_allowances` is reserved exclusively for approved automation
+   actors (see `PROTECTED_BRANCH_RELEASE_AUTOMATION_POLICY.md`). Human maintainers
+   must not be added to this list.
 
-## Why
-Even with one maintainer, required PRs provide:
-- an auditable change record with intent and rationale
-- consistent CI execution before merge
-- predictable release and change-management workflow
-- easier future transition to multi-author collaboration
+## Why enforce_admins must be enabled
 
-Requiring approvals from non-existent reviewers adds no safety and only blocks
-necessary maintenance.
+Disabling `enforce_admins` does not produce a "review-only bypass." It produces a
+**full branch-protection bypass**, including the PR requirement. An empirical test
+confirmed that with `enforce_admins=false`, a repository administrator can push
+commits directly to a protected branch with no PR, no review, and no CI run. GitHub
+acknowledges this explicitly in the remote output:
+
+> Bypassed rule violations for refs/heads/main: Changes must be made through a pull request.
+
+This is unsafe and defeats the audit model this policy exists to enforce.
+`enforce_admins=false` is therefore **prohibited** for human workflows on protected
+repositories.
+
+## Why required reviews are set to 0
+
+With `enforce_admins` enabled, setting `required_approving_review_count` to 1 would
+lock the sole maintainer out of merging entirely, since there is no second person to
+provide a review. Requiring an approval from a non-existent reviewer adds no safety
+and blocks necessary maintenance.
+
+The friction in this model comes from the mandatory PR itself: every change requires
+an explicit PR, CI execution, and a deliberate merge action. That is sufficient for
+the single-author phase.
+
+## What this achieves
+
+- Every human change lands via a PR, creating an auditable record with intent and CI results.
+- No human maintainer (including admins) can silently push directly to a protected branch.
+- The sole maintainer can merge their own PR once status checks pass, without being
+  blocked on an unavailable reviewer.
+- The release automation bot retains its narrow, scoped bypass for direct release
+  commits as defined separately.
 
 ## Relationship to Automation Exception Policy
-TOOO may separately allow specific automation actors (for example,
-`semantic-release`) to bypass PR requirements in tightly scoped cases.
+TOOO may allow specific automation actors (for example, `semantic-release`) to bypass
+PR requirements in tightly scoped cases. That exception is defined in
+`PROTECTED_BRANCH_RELEASE_AUTOMATION_POLICY.md` and is unaffected by this document.
 
-That exception is defined by a separate policy and is unaffected by this
-document.
+## Future refinement: GitHub Rulesets
+GitHub Rulesets may support more granular bypass control, potentially allowing a model
+where a human maintainer can bypass the *review requirement* specifically while the
+*PR requirement* still applies to them. If TOOO adopts Rulesets, this policy should be
+updated after validating that:
+1. Human direct push to `main` is blocked.
+2. Human PR merge without approval is allowed.
+3. Human PR merge before status checks pass is blocked.
+4. Release bot direct release write still works.
+
+Until that is validated in a test repository, the classic branch protection model
+described above is the required configuration.
+
+## Continuous verification
+
+For repositories covered by this policy, the live GitHub branch protection
+configuration must be continuously verified by an organization-controlled audit
+workflow (`audit-protected-repos.yml` in this repository).
+
+That audit must, at minimum, verify that:
+
+1. pull requests are required for human changes,
+2. `enforce_admins` is enabled,
+3. `required_approving_review_count` is `0` during the single-author phase,
+4. human users and teams are not present in PR-bypass allowances, and
+5. only explicitly approved automation actors appear in bypass allowances, as
+   defined by `PROTECTED_BRANCH_RELEASE_AUTOMATION_POLICY.md`.
+
+The audit runs daily on a schedule, on push to `main` when policy files change,
+and on demand. It must not expose privileged credentials to untrusted pull
+request code paths.
+
+GitHub branch protection is the enforcement mechanism. The audit workflow is the
+continuous verification and drift-detection mechanism.
+
+The expected settings for each protected repository are maintained in
+`governance/protected-repos.json`. That file is the policy baseline.
 
 ## Trigger for Re-evaluation
-This policy must be re-evaluated when TOOO moves out of the single-author
-phase, including when any additional write-capable maintainer becomes active on
-protected repositories.
-
-At that point, required approving reviews should be raised from `0` to a
-minimum of `1`, unless superseded by an updated policy.
+This policy must be re-evaluated when:
+- TOOO moves out of the single-author phase (raise `required_approving_review_count`
+  from 0 to at least 1 when a second active maintainer joins).
+- TOOO adopts GitHub Rulesets and validates the more granular bypass model described
+  above.

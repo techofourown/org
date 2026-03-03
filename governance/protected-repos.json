@@ -1,0 +1,36 @@
+{
+  "repos": [
+    {
+      "repo": "techofourown/img-ourbox-woodbox",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-semantic-release-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    },
+    {
+      "repo": "techofourown/img-ourbox-matchbox",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-semantic-release-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    },
+    {
+      "repo": "techofourown/sw-ourbox-os",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-semantic-release-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    },
+    {
+      "repo": "techofourown/org-techofourown",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-semantic-release-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    }
+  ]
+}
