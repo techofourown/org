@@ -1,10 +1,11 @@
-# Protected Repositories: PR Required, Review Optional (Single-Author Phase)
-**Draft v1.0**
+# Protected Repositories: PR Required, Review Gate with Admin Override (Single-Author Phase)
+**Draft v1.1**
 
 ## Purpose
 This policy defines how branch protection is configured during TOOO's current
-single-author operating phase. It preserves change control and auditability
-without creating a fake reviewer requirement when there is only one maintainer.
+single-author operating phase. It creates a deliberate review gate on every PR
+while preserving the sole maintainer's ability to consciously override that gate
+when acting as the authoritative decision-maker.
 
 ## Scope
 This policy applies to repositories that are already designated as protected.
@@ -20,20 +21,25 @@ For protected repositories:
 
 1. Pull requests to protected branches are required.
 2. Direct pushes to protected branches are disallowed.
-3. Required approving reviews are set to `0` while TOOO is operated by a single
-   author.
-4. Required status checks may still be enforced independently.
-5. Admin enforcement on protected branches may remain enabled.
+3. Required approving reviews are set to `1`.
+4. Admin enforcement (`enforce_admins`) must be **disabled**, so that a repository
+   administrator can override the review requirement when acting as sole maintainer.
+5. Required status checks may still be enforced independently.
 
 ## Why
-Even with one maintainer, required PRs provide:
-- an auditable change record with intent and rationale
-- consistent CI execution before merge
-- predictable release and change-management workflow
-- easier future transition to multi-author collaboration
+Required PRs provide an auditable change record, consistent CI execution, and a
+predictable workflow. Setting required reviews to `1` adds a deliberate friction
+point — the maintainer must consciously act to merge, rather than merging silently.
 
-Requiring approvals from non-existent reviewers adds no safety and only blocks
-necessary maintenance.
+With `enforce_admins` disabled, the sole maintainer is never locked out: they can
+use the "Merge without waiting for requirements" override when appropriate. This is
+a conscious action, not a silent bypass, and it preserves the audit trail in the
+PR record.
+
+This model is preferred over `0` required reviews because it makes the merge a
+deliberate, visible decision rather than a frictionless default. When a second
+maintainer joins, the override becomes genuinely meaningful — the maintainer is
+choosing to override an external review, not merely acknowledging their own PR.
 
 ## Relationship to Automation Exception Policy
 TOOO may separately allow specific automation actors (for example,
@@ -47,5 +53,6 @@ This policy must be re-evaluated when TOOO moves out of the single-author
 phase, including when any additional write-capable maintainer becomes active on
 protected repositories.
 
-At that point, required approving reviews should be raised from `0` to a
-minimum of `1`, unless superseded by an updated policy.
+At that point, `enforce_admins` should be re-evaluated — disabling it grants
+bypass to all administrators, which is appropriate for a sole maintainer but
+may be too broad once the team grows.
