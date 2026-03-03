@@ -1,11 +1,11 @@
-# Protected Repositories: PR Required, Review Gate with Admin Override (Single-Author Phase)
-**Draft v1.1**
+# Protected Repositories: PR Required, Admin Enforced, No Required Review (Single-Author Phase)
+**Draft v1.2**
 
 ## Purpose
 This policy defines how branch protection is configured during TOOO's current
-single-author operating phase. It creates a deliberate review gate on every PR
-while preserving the sole maintainer's ability to consciously override that gate
-when acting as the authoritative decision-maker.
+single-author operating phase. It enforces a mandatory PR workflow for all human
+changes, preserves a full audit trail, and keeps the sole maintainer unblocked —
+without using bypass mechanisms that defeat the PR requirement itself.
 
 ## Scope
 This policy applies to repositories that are already designated as protected.
@@ -17,42 +17,74 @@ This policy does **not** define:
 Those decisions remain out of scope for this document.
 
 ## Policy
-For protected repositories:
+For protected repositories under GitHub classic branch protection:
 
-1. Pull requests to protected branches are required.
-2. Direct pushes to protected branches are disallowed.
-3. Required approving reviews are set to `1`.
-4. Admin enforcement (`enforce_admins`) must be **disabled**, so that a repository
-   administrator can override the review requirement when acting as sole maintainer.
+1. Pull requests to protected branches are required for all human changes.
+2. Direct human pushes to protected branches are disallowed.
+3. Admin enforcement (`enforce_admins`) must be **enabled**. Admins are subject to
+   the same PR requirement as all other contributors.
+4. Required approving reviews are set to `0`. The sole maintainer may merge their
+   own PR without a second reviewer.
 5. Required status checks may still be enforced independently.
+6. `bypass_pull_request_allowances` is reserved exclusively for approved automation
+   actors (see `PROTECTED_BRANCH_RELEASE_AUTOMATION_POLICY.md`). Human maintainers
+   must not be added to this list.
 
-## Why
-Required PRs provide an auditable change record, consistent CI execution, and a
-predictable workflow. Setting required reviews to `1` adds a deliberate friction
-point — the maintainer must consciously act to merge, rather than merging silently.
+## Why enforce_admins must be enabled
 
-With `enforce_admins` disabled, the sole maintainer is never locked out: they can
-use the "Merge without waiting for requirements" override when appropriate. This is
-a conscious action, not a silent bypass, and it preserves the audit trail in the
-PR record.
+Disabling `enforce_admins` does not produce a "review-only bypass." It produces a
+**full branch-protection bypass**, including the PR requirement. An empirical test
+confirmed that with `enforce_admins=false`, a repository administrator can push
+commits directly to a protected branch with no PR, no review, and no CI run. GitHub
+acknowledges this explicitly in the remote output:
 
-This model is preferred over `0` required reviews because it makes the merge a
-deliberate, visible decision rather than a frictionless default. When a second
-maintainer joins, the override becomes genuinely meaningful — the maintainer is
-choosing to override an external review, not merely acknowledging their own PR.
+> Bypassed rule violations for refs/heads/main: Changes must be made through a pull request.
+
+This is unsafe and defeats the audit model this policy exists to enforce.
+`enforce_admins=false` is therefore **prohibited** for human workflows on protected
+repositories.
+
+## Why required reviews are set to 0
+
+With `enforce_admins` enabled, setting `required_approving_review_count` to 1 would
+lock the sole maintainer out of merging entirely, since there is no second person to
+provide a review. Requiring an approval from a non-existent reviewer adds no safety
+and blocks necessary maintenance.
+
+The friction in this model comes from the mandatory PR itself: every change requires
+an explicit PR, CI execution, and a deliberate merge action. That is sufficient for
+the single-author phase.
+
+## What this achieves
+
+- Every human change lands via a PR, creating an auditable record with intent and CI results.
+- No human maintainer (including admins) can silently push directly to a protected branch.
+- The sole maintainer can merge their own PR once status checks pass, without being
+  blocked on an unavailable reviewer.
+- The release automation bot retains its narrow, scoped bypass for direct release
+  commits as defined separately.
 
 ## Relationship to Automation Exception Policy
-TOOO may separately allow specific automation actors (for example,
-`semantic-release`) to bypass PR requirements in tightly scoped cases.
+TOOO may allow specific automation actors (for example, `semantic-release`) to bypass
+PR requirements in tightly scoped cases. That exception is defined in
+`PROTECTED_BRANCH_RELEASE_AUTOMATION_POLICY.md` and is unaffected by this document.
 
-That exception is defined by a separate policy and is unaffected by this
-document.
+## Future refinement: GitHub Rulesets
+GitHub Rulesets may support more granular bypass control, potentially allowing a model
+where a human maintainer can bypass the *review requirement* specifically while the
+*PR requirement* still applies to them. If TOOO adopts Rulesets, this policy should be
+updated after validating that:
+1. Human direct push to `main` is blocked.
+2. Human PR merge without approval is allowed.
+3. Human PR merge before status checks pass is blocked.
+4. Release bot direct release write still works.
+
+Until that is validated in a test repository, the classic branch protection model
+described above is the required configuration.
 
 ## Trigger for Re-evaluation
-This policy must be re-evaluated when TOOO moves out of the single-author
-phase, including when any additional write-capable maintainer becomes active on
-protected repositories.
-
-At that point, `enforce_admins` should be re-evaluated — disabling it grants
-bypass to all administrators, which is appropriate for a sole maintainer but
-may be too broad once the team grows.
+This policy must be re-evaluated when:
+- TOOO moves out of the single-author phase (raise `required_approving_review_count`
+  from 0 to at least 1 when a second active maintainer joins).
+- TOOO adopts GitHub Rulesets and validates the more granular bypass model described
+  above.
