@@ -27,12 +27,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Mint policy-audit app token
+      - name: Mint org-bot app token
         id: app-token
         uses: actions/create-github-app-token@v1
         with:
-          app-id: ${{ secrets.POLICY_AUDIT_APP_ID }}
-          private-key: ${{ secrets.POLICY_AUDIT_APP_PRIVATE_KEY }}
+          app-id: ${{ secrets.SEMREL_APP_ID }}
+          private-key: ${{ secrets.SEMREL_APP_PRIVATE_KEY }}
           owner: techofourown
 
       - name: Audit live branch protection settings
