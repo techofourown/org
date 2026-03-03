@@ -1,0 +1,41 @@
+name: Audit Protected Repo Settings
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/policies/PROTECTED_REPOS_PR_NO_REVIEW_POLICY.md'
+      - 'docs/policies/PROTECTED_BRANCH_RELEASE_AUTOMATION_POLICY.md'
+      - 'governance/protected-repos.json'
+      - 'tools/audit-protected-repos.py'
+      - '.github/workflows/audit-protected-repos.yml'
+  schedule:
+    - cron: '23 5 * * *'   # daily at 05:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: audit-protected-repos
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Mint policy-audit app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.POLICY_AUDIT_APP_ID }}
+          private-key: ${{ secrets.POLICY_AUDIT_APP_PRIVATE_KEY }}
+          owner: techofourown
+
+      - name: Audit live branch protection settings
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: python3 tools/audit-protected-repos.py

@@ -82,6 +82,31 @@ updated after validating that:
 Until that is validated in a test repository, the classic branch protection model
 described above is the required configuration.
 
+## Continuous verification
+
+For repositories covered by this policy, the live GitHub branch protection
+configuration must be continuously verified by an organization-controlled audit
+workflow (`audit-protected-repos.yml` in this repository).
+
+That audit must, at minimum, verify that:
+
+1. pull requests are required for human changes,
+2. `enforce_admins` is enabled,
+3. `required_approving_review_count` is `0` during the single-author phase,
+4. human users and teams are not present in PR-bypass allowances, and
+5. only explicitly approved automation actors appear in bypass allowances, as
+   defined by `PROTECTED_BRANCH_RELEASE_AUTOMATION_POLICY.md`.
+
+The audit runs daily on a schedule, on push to `main` when policy files change,
+and on demand. It must not expose privileged credentials to untrusted pull
+request code paths.
+
+GitHub branch protection is the enforcement mechanism. The audit workflow is the
+continuous verification and drift-detection mechanism.
+
+The expected settings for each protected repository are maintained in
+`governance/protected-repos.json`. That file is the policy baseline.
+
 ## Trigger for Re-evaluation
 This policy must be re-evaluated when:
 - TOOO moves out of the single-author phase (raise `required_approving_review_count`
