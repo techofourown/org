@@ -24,8 +24,6 @@ CC BY 4.0). We want these practices to travel.
 
 Also included are the **Ancestrels**— archetypal figures that embody each Sign, and with whom we may relate and identify. They’re a memory tool: a way to build intuition for the behaviours that can keep us safe and well. 
 
-
-
 ---
 
 ## The Eight Signs: Defining Action
@@ -34,7 +32,9 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 
 ### 1) The Sign of the Drum  
 **Meaning:** Humans are not machines. Every system should start with the human body and the human good, human warmth, and human connection.
+
 **Practice:** Begin decisions with a “Drum check”:
+
 - What human good are we serving?
 - What human risk are we introducing?
 - What boundary should automation never cross?
@@ -45,6 +45,7 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 ### 2) The Sign of Gathering
 
 **Meaning:** Our history, memories, identity, and relationships are _ours_. Gathering is an act of self-respect and self-care, and is a choice to cherish and safeguard that which should be in our personal stewardship.
+
 **Practice:** Cultivate rituals of care and responsibility around our personal information and story:
 
 * Recognize our history and identity as extensions and manifestations of ourselves, as vital resources, worthy of our protection and respect.
@@ -67,7 +68,9 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 
 ### 4) The Sign of the Whisper  
 **Meaning:** Privacy and consent are normal. Not everything belongs in public—or in logs. Respect boundaries.
+
 **Practice:** Treat private communication as a baseline human right:
+
 - Use end-to-end encryption where appropriate.
 - Minimize data collection.
 - Practice consent in what you store, share, and record.
@@ -76,7 +79,9 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 
 ### 5) The Sign of Building  
 **Meaning:** We need tools that are inspectable, repairable, adaptable, and forkable, with clear exit paths, so we arent trapped.
+
 **Practice:** Build in ways that keep power distributed:
+
 - Ship small; document well.
 - Prefer reproducible, legible systems over clever opacity.
 - Teach each other to build; build tools for ourselves and our communities.
@@ -85,6 +90,7 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 
 ### 6) The Sign of Sustaining  
 **Meaning:** The commons only survives if stewardship is funded, respected, planned, and shared.
+
 **Practice:** Contribute materially to projects which rely on donations of time, money, or other resources.
 
 
@@ -92,12 +98,14 @@ Each Sign is an actionable practice we can adopt—individually, in personal rel
 
 ### 7) The Sign of Cleaving  
 **Meaning:** We must build the courage to depart from unhealthy connections, and the boldness to make new healthy connections.
+
 **Practice:** opt out of harmfull practices, delete accounts from unhealthy platforms, and make use of ethical technology and new human realtionships.
 
 ---
 
 ### 8) The Sign of Listening  
 **Meaning:** We listen to learn and connect and support each other.
+
 **Practice:** Physically gather with other humans and take turns listening to what they have to say. Read what others share through the channels thorugh which you are connected. Seek out humans mindfully, rather than accept what the feeds bring.
 
 ---
@@ -112,6 +120,7 @@ Each Ancestrel names a way of holding responsibility in the work of humane techn
 
 ### 1) The Drummer  
 **Sign(s) Embodied:** Drum  
+
 **Role:** The keeper of the human heartbeat. The Drummer ensures every decision begins with the human
 good and ends before the boundary where automation harms dignity.
 
@@ -119,6 +128,7 @@ good and ends before the boundary where automation harms dignity.
 
 ### 2) The Gatherer  
 **Sign(s) Embodied:** Gathering  
+
 **Role:** The custodian of memory. The Gatherer helps people keep what matters in their own custody:
 portable, searchable, protected, and shareable by consent.
 
@@ -126,6 +136,7 @@ portable, searchable, protected, and shareable by consent.
 
 ### 3) The Voice  
 **Sign(s) Embodied:** Voice  
+
 **Role:** The speaker who refuses extraction. The Voice teaches, warns, explains, and amplifies what
 matters—without turning people into content for the machine.
 
@@ -133,6 +144,7 @@ matters—without turning people into content for the machine.
 
 ### 4) The Whisperer  
 **Sign(s) Embodied:** Whisper  
+
 **Role:** The protector of privacy and consent. The Whisperer treats confidentiality as normal and
 builds systems that minimize surveillance and unnecessary exposure.
 
@@ -140,6 +152,7 @@ builds systems that minimize surveillance and unnecessary exposure.
 
 ### 5) The Smith  
 **Sign(s) Embodied:** Building  
+
 **Role:** The maker of tools that people can understand and keep. The Smith shapes what is available
 into what is useful, and designs so users can repair, modify, and fork their way to freedom.
 
@@ -147,6 +160,7 @@ into what is useful, and designs so users can repair, modify, and fork their way
 
 ### 6) The Sustainer  
 **Sign(s) Embodied:** Sustaining  
+
 **Role:** The steward of long-term care. The Sustainer makes maintenance real—through funding,
 planning, documentation, and the quiet work that keeps the commons alive.
 
@@ -154,6 +168,7 @@ planning, documentation, and the quiet work that keeps the commons alive.
 
 ### 7) The Cleaver  
 **Sign(s) Embodied:** Cleaving  
+
 **Role:** The liberator and the joiner. The Cleaver ensures exit is real: revoke access, migrate
 workflows, break dependency. The Cleaver also knows how to cleave *together*—helping people build
 healthy, respectful connections and systems on their own terms.
@@ -162,6 +177,7 @@ healthy, respectful connections and systems on their own terms.
 
 ### 8) The Listener  
 **Sign(s) Embodied:** Listening  
+
 **Role:** The witness and the learner. The Listener builds spaces where truth can be spoken safely,
 and helps communities turn feedback into repair, accountability, and better choices.
 
