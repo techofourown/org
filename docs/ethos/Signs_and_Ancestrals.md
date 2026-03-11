@@ -16,11 +16,7 @@
 ## Purpose
 
 This document offers a shared ethical language for living in the modern technological world: the **Eight Signs**—eight practical
-ways to orient our choices toward human dignity, agency, privacy, and long-term freedom. They guide the actions, behaviors, and values we uphold at Tech of Our Own, and embody the practices we invite our users to integrate into their lives. Each Sign represents an essential action and purpose, grounded in sovereignty, human dignity, and the reclamation, defence, and promotion of the self.
-
-These Signs are offered as a **commons gift**. You may copy, translate, annotate, remix, and teach
-them—including commercially—so long as you **give credit** and **indicate changes** (as required by
-CC BY 4.0). We want these practices to travel.
+ways to orient our choices toward human dignity, agency, privacy, and long-term freedom. They guide the actions, behaviors, and values we espouse at Tech of Our Own, and embody the practices we invite our users to integrate into their lives. Each Sign represents an essential action and purpose, grounded in sovereignty, human dignity, and the reclamation, defence, and promotion of the self.
 
 Also included are the **Ancestrels**— archetypal figures that embody each Sign, and with whom we may relate and identify. They’re a memory tool: a way to build intuition for the behaviours that can keep us safe and well. 
 
@@ -189,5 +185,7 @@ The **Eight Signs** are a set of practices for humane technology—usable by ind
 communities, and organizations. The **Eight Ancestrels** are optional archetypes that help keep those
 practices vivid and memorable.
 
-If you use or adapt this work, please keep the lineage visible by attributing the source and linking
+These Signs are offered as a **commons gift**. You may copy, translate, annotate, remix, and teach
+them—including commercially—so long as you **give credit** and **indicate changes** (as required by
+CC BY 4.0). We want these practices to travel.If you use or adapt this work, please keep the lineage visible by attributing the source and linking
 to the canonical text.
