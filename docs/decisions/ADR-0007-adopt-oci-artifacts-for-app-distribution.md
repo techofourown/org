@@ -80,6 +80,11 @@ Those may become decisions later (see RFC-0001).
   - application catalog repos SHOULD use `sw-ourbox-catalog-<catalog>`
   - catalog OCI repos SHOULD align the same way, for example:
     - `ghcr.io/techofourown/sw-ourbox-catalog-demo`
+  - concrete initial repos now include:
+    - `sw-ourbox-apps-demo`
+    - `sw-ourbox-apps-hello-world`
+    - `sw-ourbox-catalog-demo`
+    - `sw-ourbox-catalog-hello-world`
 
 ### 4) Version tags for releases; dev tags allowed for iteration
 - Release tags SHOULD use SemVer: `vMAJOR.MINOR.PATCH`.

@@ -30,16 +30,21 @@ https://github.com/techofourown
 - img-ourbox-mini-rpi — bootable image build + publish
 - web-techofourown — website content
 
-## Upcoming naming examples
+## Current application distribution repos
 
 The typed-prefix family for the new OurBox application distribution repos is:
 
 - `sw-ourbox-apps-<collection>` for multi-application publisher repos
 - `sw-ourbox-catalog-<catalog>` for application catalog repos
 
-Examples:
+Current concrete repos:
 
 - `sw-ourbox-apps-demo`
-- `sw-ourbox-apps-core`
+- `sw-ourbox-apps-hello-world`
 - `sw-ourbox-catalog-demo`
+- `sw-ourbox-catalog-hello-world`
+
+Additional naming examples:
+
+- `sw-ourbox-apps-core`
 - `sw-ourbox-catalog-core`

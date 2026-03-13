@@ -73,7 +73,9 @@ Examples:
 
 - ✅ `sw-ourbox-os` (product token adds clarity)
 - ✅ `sw-ourbox-apps-demo` (product software repo publishing multiple apps)
+- ✅ `sw-ourbox-apps-hello-world` (second product software repo publishing app images)
 - ✅ `sw-ourbox-catalog-demo` (product software repo publishing a catalog bundle)
+- ✅ `sw-ourbox-catalog-hello-world` (single-app catalog bundle repo)
 - ✅ `img-ourbox-matchbox` (product token + device role)
 - ✅ `tool-av` (org-wide tool; no product token needed)
 - ✅ `pub-studio` (org-wide publications/canonical media artifacts)
@@ -158,7 +160,8 @@ new prefixes should be deliberate (via ADR update) rather than ad-hoc.
 2) **Product repos (recommended when product context matters)**  
    `"<type>-<product>-<component>"`
 
-   Examples: `sw-ourbox-os`, `sw-ourbox-apps-demo`, `sw-ourbox-catalog-demo`, `hw-ourbox-matchbox`
+   Examples: `sw-ourbox-os`, `sw-ourbox-apps-demo`, `sw-ourbox-apps-hello-world`,
+   `sw-ourbox-catalog-demo`, `sw-ourbox-catalog-hello-world`, `hw-ourbox-matchbox`
 
    For multi-application publisher repos, use a plural collection token:
    - `sw-<product>-apps-<collection>`
