@@ -74,6 +74,12 @@ Those may become decisions later (see RFC-0001).
   - Example: repo `sw-ourbox-portal` → `ghcr.io/techofourown/sw-ourbox-portal`
 - If one repo produces multiple artifacts, it MAY use path segments:
   - `ghcr.io/techofourown/sw-ourbox-os/identity`
+  - `ghcr.io/techofourown/sw-ourbox-apps-demo/todo-bloom`
+- For the OurBox application distribution split:
+  - multi-application publisher repos SHOULD use `sw-ourbox-apps-<collection>`
+  - application catalog repos SHOULD use `sw-ourbox-catalog-<catalog>`
+  - catalog OCI repos SHOULD align the same way, for example:
+    - `ghcr.io/techofourown/sw-ourbox-catalog-demo`
 
 ### 4) Version tags for releases; dev tags allowed for iteration
 - Release tags SHOULD use SemVer: `vMAJOR.MINOR.PATCH`.

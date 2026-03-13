@@ -72,6 +72,8 @@ restate the org namespace.
 Examples:
 
 - ✅ `sw-ourbox-os` (product token adds clarity)
+- ✅ `sw-ourbox-apps-demo` (product software repo publishing multiple apps)
+- ✅ `sw-ourbox-catalog-demo` (product software repo publishing a catalog bundle)
 - ✅ `img-ourbox-matchbox` (product token + device role)
 - ✅ `tool-av` (org-wide tool; no product token needed)
 - ✅ `pub-studio` (org-wide publications/canonical media artifacts)
@@ -156,7 +158,13 @@ new prefixes should be deliberate (via ADR update) rather than ad-hoc.
 2) **Product repos (recommended when product context matters)**  
    `"<type>-<product>-<component>"`
 
-   Examples: `sw-ourbox-os`, `hw-ourbox-matchbox`
+   Examples: `sw-ourbox-os`, `sw-ourbox-apps-demo`, `sw-ourbox-catalog-demo`, `hw-ourbox-matchbox`
+
+   For multi-application publisher repos, use a plural collection token:
+   - `sw-<product>-apps-<collection>`
+
+   For application catalog repos, use:
+   - `sw-<product>-catalog-<catalog>`
 
 3) **Explicitly shared repos (optional)**  
    `"<type>-common-<component>"`
@@ -236,6 +244,8 @@ Preferred examples (new scheme):
 
 - `org-control-plane`
 - `sw-ourbox-os`
+- `sw-ourbox-apps-demo`
+- `sw-ourbox-catalog-demo`
 - `pf-ourbox`
 - `hw-ourbox-matchbox`
 - `img-ourbox-matchbox`

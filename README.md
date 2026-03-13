@@ -29,3 +29,17 @@ https://github.com/techofourown
 - sw-ourbox-os — OurBox OS
 - img-ourbox-mini-rpi — bootable image build + publish
 - web-techofourown — website content
+
+## Upcoming naming examples
+
+The typed-prefix family for the new OurBox application distribution repos is:
+
+- `sw-ourbox-apps-<collection>` for multi-application publisher repos
+- `sw-ourbox-catalog-<catalog>` for application catalog repos
+
+Examples:
+
+- `sw-ourbox-apps-demo`
+- `sw-ourbox-apps-core`
+- `sw-ourbox-catalog-demo`
+- `sw-ourbox-catalog-core`
