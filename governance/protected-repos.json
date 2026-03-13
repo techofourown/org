@@ -25,6 +25,46 @@
       "allow_deletions": false
     },
     {
+      "repo": "techofourown/sw-ourbox-installer",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-org-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    },
+    {
+      "repo": "techofourown/sw-ourbox-apps-demo",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-org-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    },
+    {
+      "repo": "techofourown/sw-ourbox-apps-hello-world",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-org-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    },
+    {
+      "repo": "techofourown/sw-ourbox-catalog-demo",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-org-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    },
+    {
+      "repo": "techofourown/sw-ourbox-catalog-hello-world",
+      "branch": "main",
+      "required_approving_review_count": 0,
+      "allowed_bypass_apps": ["tooo-org-bot"],
+      "allow_force_pushes": false,
+      "allow_deletions": false
+    },
+    {
       "repo": "techofourown/org-techofourown",
       "branch": "main",
       "required_approving_review_count": 0,
