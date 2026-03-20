@@ -94,6 +94,12 @@ Trusted release context
 A controlled source context authorized to produce official artifacts, such as a protected branch,
 approved tag, or equivalent repository-defined release ref.
 
+Intent surface
+A source-controlled control-plane surface that expresses selection policy or intent, such as a
+repository, channel, profile, approved snapshot, or compatibility boundary. It does not by itself
+establish the final immutable artifact identity for a specific build, compose, install, or
+publication event.
+
 Provenance metadata
 The minimum traceability information associated with an artifact. At minimum this includes:
 	•	source repository identity
@@ -104,17 +110,24 @@ The minimum traceability information associated with an artifact. At minimum thi
 
 Where signatures or attestations exist, they are additive controls on top of this metadata.
 
+Resolved identity record
+A generated build-, publication-, compose-, or install-time record that captures the exact immutable
+identity selected for a specific event, such as digest-pinned OCI refs, checksums, candidate
+provenance bundles, publish records, mission manifests, or installed-system release metadata.
+
 ⸻
 
 The rule
 	1.	Only artifacts that satisfy this policy and are published through a TOOO-controlled official release channel may be represented as official TOOO artifacts.
 	2.	Official artifacts MUST be buildable from public source using documented public build entrypoints kept in version control.
 	3.	Official artifacts MUST carry, or be accompanied by, minimum provenance metadata.
-	4.	Official heavy-artifact release capability MUST remain operable on organization-controlled build infrastructure and MUST NOT depend exclusively on third-party hosted CI execution.
-	5.	Privileged builders MUST NOT execute untrusted public pull request code with release credentials or privileged network/storage access.
-	6.	Public repositories, public artifacts, and public documentation MUST NOT disclose sensitive internal infrastructure details.
-	7.	Compatible third-party artifacts MAY be built from the same public source and entrypoints, but they are not official TOOO artifacts unless TOOO publishes them through an official release channel.
-	8.	No artifact may be described as “signed,” “verified,” or “attested” unless that claim is true for the artifact actually published.
+	4.	Source-controlled official control-plane surfaces MUST carry intent. Generated build, publication, compose, and install records MAY carry resolved immutable identity.
+	5.	TOOO-controlled repositories MUST NOT use checked-in mirrored TOOO-produced upstream digest pins, checksums, or equivalent resolved immutable identities as the normative approval or control plane for official builds.
+	6.	Official heavy-artifact release capability MUST remain operable on organization-controlled build infrastructure and MUST NOT depend exclusively on third-party hosted CI execution.
+	7.	Privileged builders MUST NOT execute untrusted public pull request code with release credentials or privileged network/storage access.
+	8.	Public repositories, public artifacts, and public documentation MUST NOT disclose sensitive internal infrastructure details.
+	9.	Compatible third-party artifacts MAY be built from the same public source and entrypoints, but they are not official TOOO artifacts unless TOOO publishes them through an official release channel.
+	10.	No artifact may be described as “signed,” “verified,” or “attested” unless that claim is true for the artifact actually published.
 
 ⸻
 
@@ -125,6 +138,14 @@ Source and build controls
 repo change control.
 	•	Each repository producing official artifacts MUST document its public build entrypoint(s).
 	•	Official artifacts MUST be produced only from trusted release contexts.
+	•	Repositories MUST document which source-controlled surfaces are authoritative for intent and which
+generated surfaces record resolved immutable identity.
+	•	When official builds consume TOOO-produced upstream artifacts, the checked-in control-plane surface
+MUST identify the governing intent or approved snapshot, not mirror the resolved upstream digests as
+the normative approval mechanism.
+	•	Transitional checked-in generated lockfiles MAY exist temporarily during migration, but they MUST be
+explicitly labeled transitional and MUST identify the upstream approval record or workflow-time
+resolution step that is authoritative.
 	•	Repositories SHOULD separate unprivileged validation builds from privileged release builds.
 	•	Repositories SHOULD document:
 	•	official release channel(s)
@@ -166,6 +187,9 @@ Additional expectations:
 	•	a build workflow run,
 	•	a privileged builder identity,
 	•	or an equivalent publication record.
+	•	Exact digests, pinned refs, and checksums are expected in generated publication, compose, install,
+and installed-system provenance records. Those generated records are the correct place to carry
+resolved immutable identity.
 	•	If cryptographic signatures or attestations are adopted for a repository, they SHOULD be published
 and documented clearly, but the absence of signing MUST NOT be misrepresented as verified provenance.
 
@@ -189,6 +213,7 @@ Public docs SHOULD explain:
 	•	where official artifacts are published
 	•	how users can inspect version, digest, or checksum information
 	•	how third parties can build compatible artifacts from public source
+	•	the distinction between source-controlled intent surfaces and generated resolved-identity records
 	•	the distinction between official artifacts and compatible/custom artifacts
 
 Heavy-artifact continuity controls
