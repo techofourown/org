@@ -35,6 +35,21 @@ at:
 
 - `accounts.techofourown.com`
 
+This RFC also explicitly includes **federation / bring-your-own-identity**
+requirements.
+
+TOOO does not merely need an internal account system. It needs a
+public-platform identity service that can remain canonical while also
+welcoming people who already anchor identity elsewhere: conventional OIDC /
+SAML providers, self-hosted / domain-based identity, fediverse-style
+identities, and the AT Protocol / Bluesky ecosystem.
+
+OpenID Connect is a general-purpose identity layer on top of OAuth 2.0.
+ActivityPub is a decentralized social networking protocol. AT Protocol
+combines portable identity (handles plus DIDs) with OAuth-based client
+authorization. Those differences matter to vendor selection and to the shape of
+the final architecture. ([OpenID Foundation][1])
+
 ---
 
 ## Why
@@ -70,6 +85,17 @@ this topic. The selected solution should fit TOOO's commitments to:
 - local-first values
 - organization-controlled infrastructure
 - inspectability and future exit
+
+A TOOO platform that requires every person to abandon existing identity and
+start over with a TOOO-only account would be strategically clumsy and
+philosophically off-brand.
+
+Some people will come from organizations that already run their own identity
+provider. Some will come from self-hosted or domain-based setups. Some will
+care deeply about identity portability because they already live in federated
+or decentralized ecosystems. Welcoming those users does not mean outsourcing
+TOOO's account authority. It means designing the account layer so portability
+and federation are possible where they make sense.
 
 ---
 
@@ -125,6 +151,55 @@ The solution should be realistic for a small but serious organization to run.
 
 The solution must fit the public platform **without** pulling OurBox or future
 local-first products into a mandatory TOOO-operated account dependency.
+
+### Federation and Portable-Identity Requirements
+
+The identity-provider evaluation must include the following requirements in
+addition to ordinary login, MFA, session, and admin capabilities:
+
+- **Canonical TOOO account model**
+  - The platform must preserve a TOOO-native canonical account record for
+    entitlements, billing, moderation, and audit.
+- **Multiple linked identities**
+  - A single TOOO account should be able to link to multiple external identity
+    authorities over time.
+- **Generic OIDC federation**
+  - Generic OpenID Connect federation with Discovery should be treated as the
+    near-term standards baseline for BYOI. OIDC Discovery exists specifically
+    so a relying party can discover the end-user's provider and its endpoints,
+    and it uses WebFinger in that discovery process. ([OpenID Foundation][3])
+- **Enterprise / org federation**
+  - Enterprise-oriented SAML may still matter for organizations, schools, and
+    institutional partners, even if it is not the most elegant user-owned
+    path.
+- **Fediverse compatibility as an architectural consideration**
+  - ActivityPub ecosystems matter to TOOO because they represent users who
+    already expect decentralized identity surfaces and `user@host` addressing.
+    ActivityPub itself should not be mistaken for a general-purpose login
+    standard, but candidate systems should not block future verified-linking,
+    discovery, or broker patterns for fediverse-adjacent identities. ([W3C][2])
+- **AT Protocol compatibility as an architectural consideration**
+  - AT Protocol matters to TOOO because it offers portable identities built
+    from handles, DIDs, hosting references, and OAuth-based client
+    authorization. Candidate systems do not need native AT Protocol login on
+    day one, but they should leave room for verified linking and possible
+    future ATproto-aware auth / broker flows. ([AT Protocol][7])
+- **No mandatory third-party gatekeeper**
+  - TOOO should never require users to depend on one outside social or
+    identity network as the only way into the platform.
+- **Recovery independence**
+  - A user must be able to recover a TOOO account even if an external identity
+    provider, community server, or hosting arrangement disappears.
+- **Identifier flexibility**
+  - The account model should not assume email address is the only durable
+    external identifier. It should be able to represent at least:
+    - issuer + subject
+    - `acct:user@host`
+    - handle
+    - DID
+    - verification state
+    - trust level
+    - recovery independence
 
 ---
 
@@ -463,6 +538,32 @@ Leading fit:
 
 - custom build
 
+### Additional Upsides of Federation / BYOI Posture
+
+- More welcoming to users from self-hosted, federated, and portable-identity
+  cultures.
+- Reduces TOOO-created lock-in at the account layer.
+- Makes it easier to support institutions, communities, and open-social users
+  without forcing one identity culture on everyone.
+
+### Additional Downsides
+
+- Increases complexity around trust, abuse handling, account recovery, and
+  claim mapping.
+- Can leak more information to upstream identity providers when those
+  providers are used for sign-in.
+- Risks category confusion if social protocols are treated as if they were all
+  equivalent to a general-purpose IdP.
+
+### Additional Mitigation
+
+- Keep native TOOO sign-in as a first-class path.
+- Make external identities optional and linkable, not mandatory.
+- Roll out open-social compatibility in stages:
+  1. verified linking
+  2. account association and claims
+  3. selective login / broker support where justified
+
 ---
 
 ## Open Questions
@@ -487,6 +588,31 @@ Leading fit:
    creating support nightmares?
 10. Where should the boundary sit between public-platform identity and future
     member / governance identity, if those later diverge?
+11. Should TOOO treat fediverse and AT Protocol identities as:
+    - login methods
+    - verified linked identities
+    - profile-level claims
+    - or some staged combination of the three?
+12. What exact internal model should represent:
+    - `acct:user@host`
+    - issuer / subject pairs
+    - AT Protocol handles
+    - AT Protocol DIDs
+    - verified domains
+    - provider trust levels?
+13. What should happen when an upstream server disappears, a handle moves, or
+    a user migrates hosting providers?
+14. How should TOOO distinguish:
+    - authentication authority
+    - profile identity
+    - public social identity
+    - recovery authority?
+15. Which candidate systems have the cleanest story for:
+    - generic OIDC federation
+    - account linking
+    - claims mapping
+    - custom upstream connectors or broker logic
+    - recovery that does not fully depend on the upstream provider?
 
 ---
 
@@ -502,6 +628,18 @@ Leading fit:
    - an integrated platform
    - a composable stack
 6. Write a follow-up ADR selecting the identity provider and recording why.
+7. Add a dedicated scoring axis in the vendor comparison for:
+   - **generic federation**
+   - **account linking**
+   - **recovery independence**
+   - **open-social / decentralized identity extensibility**
+8. Separate the rollout discussion into:
+   - **day-one federation**: native TOOO + generic OIDC, maybe SAML
+   - **later compatibility**: fediverse-style verified linking and AT
+     Protocol-aware linking and / or auth flows
+9. When comparing candidates, ask explicitly whether they can support a TOOO
+   canonical account with multiple linked external identities rather than
+   assuming a single-provider login model.
 
 ---
 
@@ -517,6 +655,15 @@ Leading fit:
 
 ### External
 
+- OpenID Connect Core 1.0. [OpenID Foundation][1]
+- OpenID Connect Discovery 1.0. [OpenID Foundation][3]
+- WebFinger. [IETF Datatracker][4]
+- ActivityPub. [W3C][2]
+- ActivityPub and WebFinger. [W3C][5]
+- AT Protocol overview. [AT Protocol][6]
+- AT Protocol identity guide. [AT Protocol][7]
+- AT Protocol OAuth spec. [AT Protocol][8]
+- AT Protocol self-hosting guide. [AT Protocol][9]
 - OWASP Authentication Cheat Sheet:
   https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
 - NIST SP 800-63B: https://pages.nist.gov/800-63-4/sp800-63b.html
@@ -562,3 +709,13 @@ Leading fit:
 
 - Docs home: https://dexidp.io/docs/
 - Connectors overview: https://dexidp.io/docs/connectors/
+
+[1]: https://openid.net/specs/openid-connect-core-1_0.html "Final: OpenID Connect Core 1.0 incorporating errata set 2"
+[2]: https://www.w3.org/TR/activitypub/ "ActivityPub"
+[3]: https://openid.net/specs/openid-connect-discovery-1_0.html "Final: OpenID Connect Discovery 1.0 incorporating errata set 2"
+[4]: https://datatracker.ietf.org/doc/html/rfc7033 "RFC 7033 - WebFinger"
+[5]: https://www.w3.org/community/reports/socialcg/CG-FINAL-apwf-20240608/ "ActivityPub and WebFinger"
+[6]: https://atproto.com/guides/overview "Protocol Overview - AT Protocol"
+[7]: https://atproto.com/guides/identity "Identity - AT Protocol"
+[8]: https://atproto.com/specs/oauth "OAuth - AT Protocol"
+[9]: https://atproto.com/guides/self-hosting "Self-hosting - AT Protocol Docs - AT Protocol"

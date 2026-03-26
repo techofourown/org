@@ -27,6 +27,31 @@ them soon:
 These are all part of the **public TOOO platform**: internet services operated
 by TOOO under the `techofourown.com` domain family.
 
+Tech of Our Own wants a dedicated public-platform identity service that is not
+merely a TOOO-only island.
+
+Some users will arrive with a conventional organizational identity provider.
+Some will arrive with a self-hosted or domain-based identity. Some will arrive
+from fediverse ecosystems organized around decentralized social protocols and
+`user@host`-style discovery. Some will arrive from the AT Protocol / Bluesky
+ecosystem, where identities are built around stable DIDs, human-readable
+handles, hosting portability, and OAuth-based client authorization.
+
+OpenID Connect remains the clearest general-purpose federation baseline: it is
+an identity layer on top of OAuth 2.0, and its Discovery specification defines
+how a relying party can discover the end-user's provider and endpoints,
+including via WebFinger. ActivityPub, by contrast, is a decentralized social
+networking protocol rather than a general-purpose web login standard. AT
+Protocol defines its own portable identity model and uses OAuth as the primary
+mechanism for user-facing clients. ([OpenID Foundation][1])
+
+This does not change the purpose of this ADR: TOOO still needs a dedicated
+public-platform identity service. But it adds an architectural constraint: the
+service should not assume that every meaningful user arrives with no prior
+identity except a TOOO-local username / password. The platform should be able
+to welcome portable, user-owned, and externally anchored identities without
+making any one outside network a mandatory gatekeeper.
+
 A naive approach would let the first major application become the root identity
 system. In practice, that would likely mean treating Discourse as the canonical
 account database and asking every later service to route identity through the
@@ -147,7 +172,8 @@ Concretely:
     third-party SaaS provider.
 
 11. This ADR applies to the **public TOOO platform only**. It does **not**
-    decide identity architecture for:
+    decide the identity architecture for the OurBox device / runtime
+    environment, which may have materially different requirements, including:
 
     - OurBox device-local login
     - household or community-hosted product identity
@@ -173,6 +199,35 @@ Concretely:
 
     - `../rfcs/RFC-0002-public-platform-identity-provider-options.md`
     - a later follow-up ADR that records the actual software choice
+
+Additional federation posture:
+
+- The public-platform account service remains TOOO's canonical account
+  authority. External identities may authenticate into or be linked to a TOOO
+  account, but the TOOO platform account remains the durable subject for
+  authorization, entitlements, moderation, billing, and audit.
+- The architecture MUST support linking one or more external identities to a
+  TOOO account.
+- The day-one federation baseline SHOULD be open-standards identity
+  federation, especially generic OpenID Connect with Discovery. SAML MAY also
+  be supported where organization-oriented enterprise SSO makes it necessary.
+  ([OpenID Foundation][1])
+- The architecture MUST leave room for future support of decentralized and
+  open-social identity ecosystems, including:
+  - fediverse-style identities and discovery patterns associated with
+    ActivityPub-adjacent `user@host` conventions and WebFinger discovery.
+    ([W3C][5])
+  - AT Protocol identities based on handles and DIDs, including future login
+    and / or verified-linking flows where appropriate. ([AT Protocol][6])
+- Support for external identities does NOT require TOOO to make any
+  third-party network the mandatory account rail. Native TOOO sign-in remains
+  a first-class path.
+- Day-one support for open-social identities MAY begin as verified account
+  linking, identity claims, or profile association rather than immediate
+  primary-auth login. TOOO should not confuse a social / federation protocol
+  with a general-purpose identity provider until the standards and operational
+  posture justify it. This caution follows from the different roles played by
+  OIDC, ActivityPub, and AT Protocol. ([OpenID Foundation][1])
 
 ---
 
@@ -278,6 +333,12 @@ platform.
   values.
 - The later software-selection decision can be made against clear
   architectural requirements.
+- Makes the public platform more hospitable to users who already steward
+  identity elsewhere.
+- Reduces the risk that TOOO creates a new closed identity island while trying
+  to solve account sprawl.
+- Preserves a path toward user-owned and portable identity without forcing
+  TOOO to outsource canonical account authority.
 
 ### Negative / Tradeoffs
 
@@ -288,6 +349,12 @@ platform.
   vs app-local state.
 - Public-platform identity and device-local identity will need separate
   treatment, which increases architectural surface area.
+- Adds complexity to account linking, identity proofing, recovery, trust
+  scoring, and abuse handling.
+- External identity providers and decentralized ecosystems can disappear,
+  change behavior, or provide inconsistent guarantees.
+- Open-social identity ecosystems are not uniform; treating them as if they
+  are all interchangeable "login providers" would create confusion.
 
 ### Mitigation
 
@@ -298,6 +365,14 @@ platform.
   ADRs.
 - Use the upcoming RFC to compare concrete implementation options before
   committing.
+- Keep the TOOO platform account as the canonical internal subject.
+- Keep native TOOO sign-in as a first-class recovery path.
+- Treat external identities as linked authorities, not as the sole durable
+  record.
+- Explicitly model trust level, verification state, and recovery independence
+  for each linked identity.
+- Roll out open-social identity support in stages, starting with verified
+  linking where appropriate before expanding to primary authentication.
 
 ---
 
@@ -400,8 +475,21 @@ Expected follow-up work:
 
 ### External
 
+- OpenID Connect Core 1.0. [OpenID Foundation][1]
+- OpenID Connect Discovery 1.0. [OpenID Foundation][3]
+- ActivityPub. [W3C][2]
+- WebFinger. [IETF Datatracker][4]
+- ActivityPub and WebFinger. [W3C][5]
+- AT Protocol overview / identity / OAuth. [AT Protocol][6]
 - OWASP Authentication Cheat Sheet:
   https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
 - NIST SP 800-63B: https://pages.nist.gov/800-63-4/sp800-63b.html
 - NIST SP 800-63B Authenticator guidance:
   https://pages.nist.gov/800-63-4/sp800-63b/authenticators/
+
+[1]: https://openid.net/specs/openid-connect-core-1_0.html "Final: OpenID Connect Core 1.0 incorporating errata set 2"
+[2]: https://www.w3.org/TR/activitypub/ "ActivityPub"
+[3]: https://openid.net/specs/openid-connect-discovery-1_0.html "Final: OpenID Connect Discovery 1.0 incorporating errata set 2"
+[4]: https://datatracker.ietf.org/doc/html/rfc7033 "RFC 7033 - WebFinger"
+[5]: https://www.w3.org/community/reports/socialcg/CG-FINAL-apwf-20240608/ "ActivityPub and WebFinger"
+[6]: https://atproto.com/guides/overview "Protocol Overview - AT Protocol"
