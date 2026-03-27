@@ -168,15 +168,18 @@ recovery path and not assumed to exist only in one memory or one machine.
 
 ### 11) AI assistants are not continuity custodians
 
-AI assistants may help draft or refine recovery documents.
+AI assistants may help draft or refine recovery documents and may assist the
+operator during recovery or continuity sessions.
 
 They are not continuity custodians.
 
 Continuity exists only when the protected records, keys, and restore paths are
 actually stored and recoverable under human-governed control.
 
-No broad assistant session should remain active while approved recovery media is
-mounted for live continuity work.
+When approved recovery media is mounted, the operator should be mindful of what
+the assistant can access. The assistant should never refuse to help during a
+mounted session, but may ask the operator to confirm before performing sensitive
+operations in that context.
 
 ### 12) Public posture, private mechanics
 

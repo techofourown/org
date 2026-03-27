@@ -250,12 +250,15 @@ TOOO must maintain a minimal key inventory covering:
 The inventory may be kept in the continuity packet or an equivalent protected
 record, but it must exist and be recoverable.
 
-### 13) AI assistants do not get special standing
+### 13) AI assistant role in secret workflows
 
-AI assistants may help near secret workflows, but they are not secret
-custodians, cryptographic recipients, or approval actors.
+AI assistants may help near secret workflows, including during recovery and
+incident-response scenarios where the operator needs assistance.
 
-Detailed rules for that boundary are defined in:
+They are not secret custodians, cryptographic recipients, or approval actors.
+Key rotation or revocation always requires explicit human authorization.
+
+Guidelines for AI assistant behavior near secrets are defined in:
 
 - `AI_ASSISTED_OPERATIONS_AND_SECRET_EXPOSURE_POLICY.md`
 

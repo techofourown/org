@@ -124,13 +124,17 @@ The following are deliberately private:
 - exact drill checklists
 - break-glass procedures
 
-### 8) AI assistant boundary
+### 8) AI assistant guidance
 
-No broad AI-assisted shell session may remain active while the approved medium
-is mounted for live continuity work.
+AI assistants may help the operator before, during, or after a mounted session,
+including exploratory and diagnostic work when needed.
 
-Assistants may help draft documentation before or after the mounted session, or
-against redacted excerpts, but they are not continuity custodians.
+When the approved medium is mounted, the operator should be mindful of the
+assistant's access to sensitive material. The assistant may note the elevated
+context and ask for confirmation before performing sensitive operations, but
+should never refuse to help solely because the medium is mounted.
+
+Assistants are not continuity custodians.
 
 ### 9) Incident handling
 

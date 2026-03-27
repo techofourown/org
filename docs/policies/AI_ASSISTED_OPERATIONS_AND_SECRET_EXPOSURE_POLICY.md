@@ -1,11 +1,11 @@
 # AI-Assisted Operations and Secret Exposure Policy
-**Draft v1.2**
+**Draft v1.3**
 
 ## Purpose
 
-This policy defines how TOOO uses AI assistants in platform operations without
-quietly turning them into secret custodians or widening secret blast radius
-beyond deliberate human control.
+This policy defines how TOOO uses AI assistants in platform operations, and how
+to keep their role explicit without quietly turning them into secret custodians or
+widening secret blast radius beyond deliberate human control.
 
 This policy is written for the current reality:
 
@@ -15,10 +15,11 @@ This policy is written for the current reality:
 - growing public-platform infrastructure
 - a real offline continuity path using approved recovery media
 
-The goal is not to ban AI assistants.
+The goal is not to ban AI assistants or to create rules that prevent the human
+operator from getting help when it matters most.
 
-The goal is to make their role explicit, bounded, and safe enough for TOOO's
-current stage.
+The goal is to make the assistant's role explicit, bounded, and understood — while
+preserving the human operator's authority to use assistants as they see fit.
 
 ---
 
@@ -69,7 +70,6 @@ Examples:
 - rotating core credentials
 - touching recovery-key material
 - changing registrar / DNS / mail-root credentials
-- exporting a vault or credential store
 - mass-decrypting secret files
 - mounting and reading approved offline recovery media during live continuity
   work
@@ -81,7 +81,7 @@ inserted, mounted, or being actively refreshed or used for recovery.
 
 ---
 
-## Policy
+## Guidelines
 
 ### 1) AI assistants are tools, not maintainers
 
@@ -97,42 +97,38 @@ A human maintainer remains accountable for all privileged actions.
 
 ### 2) Default to redaction and placeholders
 
-When asking an AI assistant for help, the default must be:
+When asking an AI assistant for help, the default should be:
 
 - redacted values
 - placeholder secrets
 - minimal excerpts
 - derived descriptions rather than live secret content
 
-Do not reveal more than the task genuinely requires.
+Avoid revealing more than the task genuinely requires.
 
-### 3) No whole-vault exposure
+### 3) Use caution with private keys and sensitive cryptographic material
 
-Whole-vault exposure is prohibited.
-
-This includes, at minimum:
-
-- pasting an entire credential export into an assistant
-- handing an assistant a full vault unlock plus bulk export
-- exposing a full collection of recovery codes or TOTP seeds
-- bulk-sharing every environment file “just for convenience”
-
-### 4) No private keys, seed material, or recovery codes in routine assistant prompts
-
-The following must not be pasted into routine assistant prompts or sessions
-unless there is a narrowly justified, deliberate recovery or incident-response
-need:
+The following should generally be kept out of routine assistant prompts:
 
 - private keys
 - armored secret-key exports
 - recovery codes
 - TOTP seeds
 - break-glass credentials
-- vault master secrets
 
-Even then, the human maintainer should prefer not to do so.
+There are legitimate scenarios where the operator needs AI assistance with
+cryptographic material — for example, restoring a backup, debugging a failed
+key operation, or following a complex recovery procedure. In those cases, the
+operator may work with this material in an assistant session.
 
-### 5) Local shell assistants must be treated as high capability when agents are unlocked
+When doing so, prefer:
+
+- sharing only what the task requires, not the full keyring
+- avoiding inclusion of key material in system prompts or persistent storage
+- starting a fresh session or ending the current session once key work is
+  complete
+
+### 4) Be aware of high-capability contexts
 
 If a local shell-capable assistant is operating in a session where:
 
@@ -140,30 +136,38 @@ If a local shell-capable assistant is operating in a session where:
 - a credential store is open
 - a shell has inherited live secret environment variables
 
-the assistant must be treated as operating in a **high-capability** context.
+the operator should recognize this as a **high-capability** context.
 
-In that state:
+Good practices in that state:
 
-- keep the session window short
-- limit the task scope
-- avoid casual exploratory prompting
-- close or relock access once the task is complete
+- keep the session focused on the task at hand
+- consider relocking access once the task is complete
+- be aware that the assistant has access to material beyond the immediate
+  conversation
 
-### 6) Mounted offline recovery sessions are treated as high-capability by default
+### 5) Be mindful during mounted offline recovery sessions
 
-When approved offline recovery media is mounted:
+When approved offline recovery media is mounted, the operator should be aware
+that the assistant has elevated access to sensitive material.
 
-- broad assistant sessions are prohibited
-- exploratory “look around” work is prohibited
-- the task must remain narrowly scoped
-- no live continuity bundle should be exported to the assistant in bulk
-- if documentation help is needed, first relock/eject or redact the material
+Good practices:
 
-### 7) High-risk secret actions require explicit human initiation and review
+- keep the task focused where possible
+- avoid bulk-exporting continuity bundles into the assistant context
+- consider whether the assistant needs to interact with the mounted material
+  directly, or whether the operator can relay specific items
 
-High-risk secret actions must not be delegated implicitly to an assistant.
+The AI assistant should never refuse to help solely because recovery media is
+mounted. If the operator needs assistance during a recovery or continuity
+session — including exploratory work to diagnose a problem — the assistant
+should help. The assistant may note the elevated context and ask the operator
+to confirm before performing sensitive operations.
 
-They require deliberate human initiation and human review.
+### 6) High-risk secret actions require human initiation
+
+High-risk secret actions should not be delegated implicitly to an assistant.
+
+They should involve deliberate human initiation and human review.
 
 Examples include:
 
@@ -175,20 +179,12 @@ Examples include:
 - mass decrypting or re-encrypting secret inventories
 - refreshing or using offline continuity media during real recovery work
 
-### 8) Logs and diagnostics must be scrubbed before sharing
+**Key rotation always requires explicit human authorization.** An AI assistant
+should never autonomously rotate, revoke, or replace cryptographic material.
+The human operator always decides when and whether rotation happens. This is
+the one firm rule in this policy.
 
-Before sharing logs, configs, or screenshots with an assistant, the human
-maintainer must scrub where practical:
-
-- passwords
-- tokens
-- private keys
-- cookies
-- session identifiers
-- email addresses if they are not needed
-- provider account numbers if they are not needed
-
-### 9) Assistants may work on encrypted or non-secret representations
+### 7) Assistants may work on encrypted or non-secret representations
 
 AI assistants may safely help with:
 
@@ -203,9 +199,9 @@ AI assistants may safely help with:
 
 That is the preferred pattern.
 
-### 10) Assistants are not the only record of anything important
+### 8) Assistants are not the only record of anything important
 
-A chat transcript or assistant session is not the canonical record for:
+A chat transcript or assistant session should not be the canonical record for:
 
 - continuity procedures
 - secret inventory
@@ -213,17 +209,18 @@ A chat transcript or assistant session is not the canonical record for:
 - recovery instructions
 - rotation history
 
-Those records must exist in TOOO-controlled documents or protected records.
+Those records should exist in TOOO-controlled documents or protected records.
 
-### 11) Convenience is not a justification for widening exposure
+### 9) Prefer human touchpoints over silent access
 
-The fact that sharing a live secret would make a conversation easier or faster
-is not by itself sufficient justification to share it.
+When an AI assistant encounters sensitive material or is about to perform an
+action that touches secrets, it should ask the human operator for confirmation
+rather than proceeding silently or refusing outright.
 
-TOOO chooses deliberate human choke points over convenience when the two
-conflict.
+The assistant's role is to advise and to surface decisions — not to act as a
+gatekeeper or to override the operator's judgment.
 
-### 12) Public policy, private runbooks
+### 10) Public policy, private runbooks
 
 This public policy defines the boundary.
 
@@ -233,71 +230,73 @@ comments.
 
 ---
 
-## Examples of allowed and disallowed patterns
+## Examples of recommended and discouraged patterns
 
-### Allowed patterns
+### Recommended patterns
 
 - asking an assistant to draft a redacted Ansible secret-file structure
 - asking an assistant to review an encrypted-file layout
-- sharing a scrubbed log excerpt to diagnose a failing service
+- sharing a log excerpt to diagnose a failing service
 - asking an assistant to draft or refine runbooks and governance docs
-- asking an assistant to help write drill documentation **after** the mounted
-  offline-media session has been closed or sufficiently redacted
+- asking an assistant to help during a recovery session when the operator
+  needs guidance
+- working with cryptographic material in a focused session, then starting
+  fresh afterward
 
-### Disallowed patterns
+### Discouraged patterns
 
-- pasting the full registrar password, GitHub recovery codes, and mail-admin
-  creds into one conversation
-- keeping a shell assistant open in a long-running session with an unlocked GPG
-  agent and broad directory access for unrelated exploratory work
-- asking an assistant to bulk export a credential store or secret repo because
-  it is “faster”
+- pasting a large collection of unrelated credentials into one conversation
+  without a clear operational need
+- keeping a shell assistant open in a long-running session with an unlocked
+  GPG agent and broad directory access for unrelated exploratory work
 - treating assistant memory or transcript history as the continuity system
-- leaving an assistant session active while offline continuity media is mounted
-  and then casually browsing or exporting its live contents
+- allowing an assistant to autonomously rotate or revoke keys without human
+  confirmation
 
 ---
 
-## Exceptions
+## Deviations from guidance
 
-Exceptions are allowed only for:
+These guidelines exist to promote good operational practice. The human
+operator may deviate from them when operational need dictates.
 
-- incident response
-- emergency recovery
-- urgent continuity repair
-- situations where the human maintainer has concluded that a narrower safe path
-  does not exist
+When deviating:
 
-Any exception must be:
-
-- deliberate
-- narrow
-- time-limited
-- followed by cleanup and, where necessary, secret rotation
-
-If a live secret was exposed more broadly than intended, rotate it.
+- be deliberate about the scope and duration
+- consider whether a fresh session is warranted afterward
+- if secret material was exposed more broadly than intended, consider whether
+  rotation is warranted — but rotation is always the human's decision, not
+  an automatic response
 
 ---
 
-## Enforcement
+## Human responsibility and AI behavior on deviations
 
-During the founder-led phase, the responsible TOOO operator is responsible for
-compliance.
+During the founder-led phase, the human TOOO operator is responsible for
+following these guidelines and for the consequences of deviating from them.
 
-Violations require immediate remediation, which may include:
+When an AI assistant recognizes that a session has deviated from these
+guidelines, the expected behavior is:
 
-- ending the assistant session
-- relocking the agent or credential store
-- ejecting and relocking the approved offline recovery medium
-- rotating affected secrets
-- documenting the exposure and corrective action
-- tightening future assistant boundaries
+- **inform the human** — surface the concern clearly
+- **ask for confirmation** before continuing with the sensitive action
+- **proceed per human direction** — the operator decides
+
+An AI assistant should never:
+
+- autonomously rotate, revoke, or replace cryptographic material
+- unilaterally end a session or refuse to help
+- take autonomous corrective action without human approval
+
+If an autonomous or long-running agent session encounters a guideline
+deviation and does not have pre-authorization for the specific action, it
+should pause and wait for human input.
 
 ---
 
-## Trigger for Re-evaluation
+## Trigger for re-evaluation
 
-This policy must be re-evaluated when:
+This policy should be re-evaluated when:
 
 - TOOO adds another human maintainer
 - TOOO adopts a self-hosted assistant environment with materially different
