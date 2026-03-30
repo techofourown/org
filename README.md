@@ -27,7 +27,7 @@ https://github.com/techofourown
 - org-techofourown — governance + policies + decision records (this repo)
 - pf-ourbox — OurBox product family (see family repo for product-specific naming)
 - sw-ourbox-os — OurBox OS
-- img-ourbox-mini-rpi — bootable image build + publish
+- img-ourbox-matchbox — bootable image build + publish
 - web-techofourown — website content
 
 ## Current application distribution repos
