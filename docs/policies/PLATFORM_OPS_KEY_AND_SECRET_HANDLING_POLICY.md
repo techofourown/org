@@ -30,8 +30,8 @@ minimum:
 - `forum.techofourown.com`
 - future public-platform services operated under the `techofourown.com` family
 - service operations repos such as:
-  - `ops-platform-keycloak`
-  - `ops-platform-discourse`
+  - `ops-platform-keycloak-private`
+  - `ops-platform-discourse-private`
 
 This policy applies to three classes of sensitive material:
 

@@ -39,8 +39,8 @@ The immediate scope is the emerging public-platform operations layer around:
 - `forum.techofourown.com` (Discourse)
 - future course, billing, donation, storefront, and member-facing surfaces
 - service-specific operations repos such as:
-  - `ops-platform-keycloak`
-  - `ops-platform-discourse`
+  - `ops-platform-keycloak-private`
+  - `ops-platform-discourse-private`
 
 This work is happening during a very specific organizational stage:
 
@@ -497,8 +497,8 @@ That remains the cleanest fit for TOOO's current stage.
    founder's other personal crypto use on day one?
 2. Should hardware tokens be a day-one requirement, a recommendation, or a
    later hardening step?
-3. What exact file layout should `ops-platform-keycloak` and
-   `ops-platform-discourse` use for encrypted secret material?
+3. What exact file layout should `ops-platform-keycloak-private` and
+   `ops-platform-discourse-private` use for encrypted secret material?
 4. What minimal encrypted credential-store requirements should apply before
    TOOO formally standardizes a human-oriented vault product?
 5. What local workflow rules are needed around:
@@ -523,8 +523,8 @@ The immediate next steps from this RFC have now effectively become:
    - one day-to-day TOOO operator GPG key
    - one TOOO recovery key
 4. define the initial secret layout for:
-   - `ops-platform-keycloak`
-   - `ops-platform-discourse`
+   - `ops-platform-keycloak-private`
+   - `ops-platform-discourse-private`
 5. establish the first continuity bundle and run the first validation drill
 6. revisit the need for a formal human-oriented credential-vault decision later,
    once the operator-memory problem and team size justify it
