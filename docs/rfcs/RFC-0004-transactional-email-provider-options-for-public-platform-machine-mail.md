@@ -30,7 +30,7 @@ The immediate public-platform scope is:
 
 - `accounts.techofourown.com`
 - `forum.techofourown.com`
-- `updates.techofourown.com`
+- `news.techofourown.com`
 
 This RFC assumes those three rails are needed from day one.
 
@@ -76,8 +76,8 @@ At minimum:
   workflows.
 - Discourse needs outbound email for forum notifications and digests.
 - Discourse reply-by-email requires an inbound mail path.
-- TOOO wants an updates / news rail from day one for direct communication with
-  its audience.
+- TOOO wants a news / newsletter rail from day one for direct communication
+  with its audience.
 
 ### Existing architecture already constrains the shape
 
@@ -86,7 +86,7 @@ At minimum:
 - apex-domain human mail stays separate from machine mail
 - machine mail should use purpose-specific subdomains
 - reputation should be split by function, not by every app
-- `forum`, `accounts`, and `updates` are the right machine-mail rails
+- `forum`, `accounts`, and `news` are the right machine-mail rails
 
 That narrows the provider problem.
 
@@ -142,7 +142,7 @@ The provider should be evaluated against **three day-one rails**:
 
 - `accounts.techofourown.com`
 - `forum.techofourown.com`
-- `updates.techofourown.com`
+- `news.techofourown.com`
 
 ### 3) Day-one reply-by-email
 
@@ -179,7 +179,7 @@ Use Amazon SES for:
 
 - `accounts.techofourown.com`
 - `forum.techofourown.com`
-- `updates.techofourown.com`
+- `news.techofourown.com`
 
 Use SES sending for outbound mail and SES receiving for the forum reply-by-email
 path.
@@ -238,7 +238,7 @@ Use Mailgun for:
 
 - `accounts.techofourown.com`
 - `forum.techofourown.com`
-- `updates.techofourown.com`
+- `news.techofourown.com`
 
 Use Mailgun's outbound delivery and inbound routing for reply-by-email.
 
@@ -282,7 +282,7 @@ Use Postmark for:
 
 - `accounts.techofourown.com`
 - `forum.techofourown.com`
-- `updates.techofourown.com`
+- `news.techofourown.com`
 
 Use Postmark outbound sending and its inbound capability where needed.
 
@@ -323,7 +323,7 @@ experience and is willing to pay more than SES for it.
 
 ---
 
-### Option D: Split provider — Postmark for auth, Mailgun for forum + updates
+### Option D: Split provider — Postmark for auth, Mailgun for forum + news
 
 #### Shape
 
@@ -331,7 +331,7 @@ Use:
 
 - Postmark for `accounts.techofourown.com`
 - Mailgun for `forum.techofourown.com`
-- Mailgun for `updates.techofourown.com`
+- Mailgun for `news.techofourown.com`
 
 #### Pros
 
@@ -449,7 +449,7 @@ following:
 
 1. Use **Amazon SES** as the transport provider for TOOO machine mail
 2. Keep human apex-domain mail out of scope and unchanged
-3. Bring `accounts`, `forum`, and `updates` online from day one
+3. Bring `accounts`, `forum`, and `news` online from day one
 4. Accept that SES reply-by-email requires a TOOO-controlled inbound path
 5. Keep the future newsletter or campaign control plane separate from the
    provider choice
@@ -464,9 +464,10 @@ deciding factor**.
 1. Which SES Region should be TOOO's day-one home for sending and receiving?
 2. What exact inbound bridge should connect SES receiving to Discourse's
    supported reply-by-email path?
-3. Should TOOO use `updates.techofourown.com` or later rename the public-facing
-   newsletter brand to `news.techofourown.com` while keeping the canonical rail
-   unchanged?
+3. ~~Should TOOO use `updates.techofourown.com` or later rename the public-facing
+   newsletter brand to `news.techofourown.com`?~~
+   **Resolved:** TOOO adopted `news.techofourown.com` as the canonical
+   newsletter / announcement rail.
 4. How much of the future newsletter/control-plane logic should be self-hosted,
    and when?
 5. At what scale, if any, would TOOO revisit the cost-vs-convenience trade and

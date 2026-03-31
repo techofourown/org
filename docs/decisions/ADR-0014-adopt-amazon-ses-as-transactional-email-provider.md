@@ -21,13 +21,13 @@ The current day-one machine-mail rails are:
 
 - `accounts.techofourown.com`
 - `forum.techofourown.com`
-- `updates.techofourown.com`
+- `news.techofourown.com`
 
 Those rails cover:
 
 - account verification, password resets, and security mail
 - forum notifications, digests, and reply-by-email
-- direct updates / news communication with TOOO's audience
+- newsletter, announcements, and news communication with TOOO's audience
 
 A few architectural boundaries are already settled.
 
@@ -36,7 +36,7 @@ From `ADR-0009`:
 - human-operated apex-domain mail and machine-generated mail are separate
 - apex-domain human mail is out of scope for this provider decision
 - machine mail should be separated by function and reputation class
-- `accounts`, `forum`, and `updates` are the correct public-platform rails
+- `accounts`, `forum`, and `news` are the correct public-platform rails
 
 A second operational constraint now also matters:
 
@@ -78,7 +78,7 @@ More specifically:
 
    - `accounts.techofourown.com`
    - `forum.techofourown.com`
-   - `updates.techofourown.com`
+   - `news.techofourown.com`
 
 2. This ADR applies to **machine-generated public-platform mail only**.
 
@@ -101,16 +101,13 @@ More specifically:
    that forum reply-by-email requires a **TOOO-controlled inbound integration
    path** rather than a turnkey mailbox-polling setup.
 
-7. TOOO is **not** adopting a split-provider model for auth vs forum vs updates
+7. TOOO is **not** adopting a split-provider model for auth vs forum vs news
    mail at this stage.
    The cost advantage of one-provider SES is the controlling factor.
 
-8. The canonical day-one updates / newsletter rail remains:
+8. The canonical day-one news / newsletter / announcement rail is:
 
-   - `updates.techofourown.com`
-
-   If TOOO later prefers “news” as user-facing language, that is a naming
-   follow-up, not a different provider decision.
+   - `news.techofourown.com`
 
 9. This ADR chooses the **email transport provider**.
    It does **not** choose the long-term newsletter, campaign, or CRM control
@@ -207,7 +204,7 @@ substrate underneath whatever future control plane TOOO adopts.
 ### Positive
 
 - TOOO gets the lowest recurring provider spend among the serious options.
-- One provider can cover `accounts`, `forum`, and `updates` from day one.
+- One provider can cover `accounts`, `forum`, and `news` from day one.
 - SMTP compatibility for Keycloak and Discourse remains straightforward.
 - Day-one reply-by-email remains possible.
 - Future newsletter or campaign logic can still be layered on top later.
@@ -274,7 +271,7 @@ The day-one SES identities should cover:
 
 - `accounts.techofourown.com`
 - `forum.techofourown.com`
-- `updates.techofourown.com`
+- `news.techofourown.com`
 
 ### 2) SES sandbox exit is required
 
@@ -321,7 +318,7 @@ incoming mail as a supported family of approach.
 
 ### 6) Newsletter / updates control plane remains separate
 
-This ADR chooses SES as the delivery provider for `updates.techofourown.com`.
+This ADR chooses SES as the delivery provider for `news.techofourown.com`.
 
 It does **not** decide whether TOOO will later use Mautic, Listmonk, or another
 control-plane application for digest and broadcast logic.
