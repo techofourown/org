@@ -118,8 +118,10 @@ Tech of Our Own will use a two-tier email strategy:
      - assignment notifications
      - school/community learning notifications
 
-   - **`updates.techofourown.com`**
-     - bulk announcements
+   - **`news.techofourown.com`**
+     - newsletter sends
+     - editorial notes
+     - product announcements
      - campaign mail
      - non-critical broadcast updates
 
@@ -347,7 +349,8 @@ Examples of machine-generated addresses:
 - `orders@billing.techofourown.com`
 - `donations@billing.techofourown.com`
 - `notifications@school.techofourown.com`
-- `announcements@updates.techofourown.com`
+- `drumbeat@news.techofourown.com`
+   - `announcements@news.techofourown.com`
 
 The exact local-part naming may vary, but the subdomain-purpose mapping is the
 important part.
@@ -398,8 +401,9 @@ rails such as `orders` and `donations`.
 
 ### 7) Bulk announcement mail stays isolated
 
-`updates.techofourown.com` is reserved for bulk or campaign-style mail and must
-not be used for account security or financial notifications.
+`news.techofourown.com` is the canonical rail for newsletter, announcement, and
+campaign-style mail and must not be used for account security or financial
+notifications.
 
 Required, user-protective mail and opt-in broadcast mail should not share the
 same reputation bucket.
