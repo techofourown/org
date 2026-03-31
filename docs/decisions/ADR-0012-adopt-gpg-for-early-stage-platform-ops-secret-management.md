@@ -188,8 +188,8 @@ design itself into a one-person corner.
 
 TOOO is about to operate service repos such as:
 
-- `ops-platform-keycloak`
-- `ops-platform-discourse`
+- `ops-platform-keycloak-private`
+- `ops-platform-discourse-private`
 
 Those repos need a secret system that works well with:
 
