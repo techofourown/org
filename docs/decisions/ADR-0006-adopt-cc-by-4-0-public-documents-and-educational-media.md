@@ -1,6 +1,7 @@
-# ADR-0006: Adopt CC BY 4.0 for Tech of Our Own public documents and educational media
+# ADR-0006: Adopt CC BY 4.0 for Tech of Our Own public documents, standards, and educational media
 
 - **Date:** 2026-01-30
+- **Updated:** 2026-05-11
 - **Related:**
   - `../governance/VALUES.md` (Declaration of Values)
   - `../governance/CONSTITUTION.md`
@@ -13,8 +14,8 @@
 ## Context
 
 Tech of Our Own publishes more than software and hardware designs. We also publish “human-layer”
-materials: founding documents, policies, decision records (ADRs), templates, ethos memos, guides, and
-(soon) public education content such as podcasts and teaching series.
+materials: founding documents, policies, decision records (ADRs), templates, ethos memos, guides,
+public standards, and public education content such as podcasts and teaching series.
 
 These materials are meant to be **read by the world**, referenced, taught, translated, and adapted.
 We want them to function as a **common language** for humane technology — while remaining anchored
@@ -31,19 +32,24 @@ Our goals for these public materials are:
 We also want to avoid confusion about what is “official TOOO text” versus an adaptation. Even when
 adaptations are encouraged, we want a clear “canonical source” for readers to verify.
 
+For standards specifically, this decision is about making the text of the standard easy to copy,
+mirror, quote, translate, annotate, teach, index, and adapt with attribution. It is not a decision to
+optimize TOOO standards for patent holders, proprietary enclosure, closed compatibility gates, or
+corporate adoption at the expense of user sovereignty.
+
 Finally, we already use purpose-fit licenses for our other artifact types:
 
 - **Core software**: AGPLv3 (ADR-0001)
 - **Core hardware designs**: CERN-OHL-S-2.0 (ADR-0005)
 
-We need an equally clear, widely understood license posture for **public documents and educational
-media**.
+We need an equally clear, widely understood license posture for **public documents, standards, and
+educational media**.
 
 ---
 
 ## Decision
 
-Tech of Our Own will license eligible public documents and educational media under:
+Tech of Our Own will license eligible public documents, standards text, and educational media under:
 
 ### **Creative Commons Attribution 4.0 International (CC BY 4.0)**
 
@@ -61,6 +67,20 @@ commercial purposes — as long as they:
 This aligns with our intent: these materials are a public commons gift, but the lineage must stay
 visible.
 
+For TOOO standards, CC BY 4.0 applies to the standards text and closely related publication material:
+prose, tables, diagrams, examples, definitions, explanatory material, non-executable metadata, and
+document-generation sources whose primary purpose is producing or validating the public standard,
+unless a more specific license notice says otherwise.
+
+This ADR does **not** grant patent rights, trademark rights, endorsement rights, certification
+rights, compatibility-mark rights, or official-status rights.
+
+That is intentional.
+
+TOOO standards are published so people can build, inspect, fork, interoperate, and route around
+capture. They are not published to create patent toll roads, official-mark traps, or proprietary
+compatibility gates.
+
 ---
 
 ## Scope
@@ -77,6 +97,8 @@ adapt, including (non-exhaustive):
 - educational and community materials (workshops, teaching series, guides)
 - podcast-related collateral we publish (e.g., transcripts, show notes), when explicitly marked as
   CC BY
+- document-generation sources whose primary purpose is producing, validating, or publishing covered
+  public documents or standards, unless separately licensed
 
 ### 2) What this ADR applies to today (this repository)
 
@@ -94,6 +116,11 @@ This ADR does not decide (and does not change) licensing for:
 
 - **software code** governed by ADR-0001 (AGPL posture for core software in product repos)
 - **hardware design sources** governed by ADR-0005 (CERN-OHL posture for core hardware design repos)
+- reference implementations, SDKs, conformance harnesses, runtimes, or reusable tools unless
+  explicitly marked otherwise
+- TOOO trademarks, logos, product names, standard names, certification marks, compatibility marks, or
+  official-status claims
+- patents or patent claims
 - third-party works included in the repo that are not owned by TOOO (if any); those retain their
   upstream terms
 
@@ -115,19 +142,25 @@ translations are handled) via follow-up governance action.
 
 ## Rationale
 
-CC BY 4.0 matches our stated requirements for public documents and educational media:
+CC BY 4.0 matches our stated requirements for public documents, standards, and educational media:
 
 - **Reuse is the point:** translations, annotations, teaching, and adaptations are explicitly allowed.
 - **Attribution is required:** derivatives must point back to the source, preserving provenance.
 - **Commercial use is allowed:** the license does not restrict the ecosystem to non-commercial actors.
 - **Widely understood:** CC BY is a common, standard license for writing/media, reducing friction for
-  adopters.
+  reuse.
+
+For standards, this is a document-layer decision. It makes the text of the standard part of the
+commons. It does not turn TOOO standards into a patent-holder accommodation program, and it should
+not be reinterpreted later as a problem to solve by making standards easier to enclose.
 
 This decision also supports our broader values:
 
 - **The Sign of the Voice:** publish and teach so others can see and act.
 - **Inspectability and transparency:** people can inspect, cite, and carry the text forward.
 - **Exit and forkability (for ideas):** communities can adapt and continue without dependence on TOOO.
+- **Resistance to enclosure:** standards text can spread without turning official status, patents, or
+  compatibility claims into tools of capture.
 
 ---
 
@@ -138,8 +171,10 @@ This decision also supports our broader values:
 - People and organizations can adopt TOOO’s written frameworks and educational materials without
   asking permission.
 - Translations and localized versions become legally straightforward.
-- A shared ethical language can spread beyond TOOO products and brand boundaries.
+- A shared ethical and technical language can spread beyond TOOO products and brand boundaries.
 - Attribution requirements preserve lineage and make “where this came from” legible.
+- TOOO standards text can spread as part of the commons while keeping the anti-enclosure posture
+  explicit.
 
 ### Negative / Tradeoffs
 
@@ -149,6 +184,8 @@ This decision also supports our broader values:
   attribute the source.
 - Readers may confuse an adaptation with the canonical TOOO version unless we make canonical linking
   obvious.
+- Some patent holders, proprietary implementers, or closed vendors may dislike that TOOO does not
+  optimize standards policy around their adoption comfort.
 
 ---
 
@@ -177,17 +214,27 @@ This decision also supports our broader values:
 - Rejected.
 - NonCommercial conflicts with our stated goal to allow commercial reuse while requiring attribution.
 
+### Option F: Corporate-friendly standards adoption posture
+- Rejected.
+- TOOO does not publish standards to maximize adoption by patent holders, closed vendors, gatekeepers,
+  or proprietary platform operators.
+- TOOO welcomes implementation when it increases user sovereignty, interoperability, inspectability,
+  portability, and forkability.
+- TOOO rejects changes whose main purpose is to make standards easier to use as patent toll roads,
+  compatibility traps, official-mark traps, or proprietary enclosure mechanisms.
+
 ---
 
 ## Implementation notes
 
 ### 1) Repository hygiene (normative)
 
-For `org-techofourown` and any future content-first repos (podcasts, teaching series) adopting this
-policy:
+For `org-techofourown` and any future content-first repos (podcasts, teaching series, standards)
+adopting this policy:
 
 - Include a top-level `LICENSE` file indicating **CC BY 4.0**.
 - For major documents, include a short “License & Attribution” section near the top.
+- Clearly mark any files or directories that are not covered by the CC BY document-layer default.
 
 ### 2) Preferred attribution (recommended standard)
 
@@ -206,6 +253,19 @@ Where appropriate, documents should include:
 > “Reuse does not imply endorsement by Tech of Our Own.”
 
 This helps prevent confusion when third parties remix or reframe content.
+
+### 4) Future standards policy (normative direction)
+
+Any future TOOO standards-publication policy must preserve the distinction between:
+
+- freedom to reuse the standards text,
+- permission to claim official TOOO status,
+- permission to use TOOO marks,
+- patent or patent-assertion posture,
+- and conformance or compatibility claims.
+
+This ADR must not be used later to argue that TOOO standards should be made more comfortable for
+patent enclosure or proprietary compatibility gates.
 
 ---
 
