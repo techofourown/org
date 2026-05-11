@@ -5,7 +5,7 @@
 
 Tech of Our Own will maintain many repositories over time covering fundamentally different kinds of
 artifacts: organizational governance, software products, hardware designs, bootable images, websites,
-facilities documentation, publications/educational media, and shared tooling.
+facilities documentation, publications/educational media, public standards, and shared tooling.
 
 As the repository count grows, a flat list of repos in a GitHub organization becomes harder to
 navigate and easier to misinterpret. Ambiguous names increase the risk of confusion, misrouted work,
@@ -43,7 +43,7 @@ name itself communicates the primary artifact type without requiring users to op
 ### 1) Repository names MUST use an approved typed prefix
 
 Every repository name MUST begin with one of the approved prefixes in Appendix C (e.g., `sw-`,
-`hw-`, `img-`, `pub-`, `tool-`).
+`hw-`, `img-`, `std-`, `pub-`, `tool-`).
 
 ### 2) Repository names MUST NOT include the org name as a token
 
@@ -77,6 +77,8 @@ Examples:
 - ✅ `sw-ourbox-catalog-demo` (product software repo publishing a catalog bundle)
 - ✅ `sw-ourbox-catalog-hello-world` (single-app catalog bundle repo)
 - ✅ `img-ourbox-matchbox` (product token + device role)
+- ✅ `std-publication-system` (standards publication architecture)
+- ✅ `std-portable-application-kernel` (standard family repo)
 - ✅ `tool-av` (org-wide tool; no product token needed)
 - ✅ `pub-studio` (org-wide publications/canonical media artifacts)
 
@@ -105,14 +107,20 @@ real-world namespaces work: the org already tells you “this is Tech of Our Own
 A small controlled vocabulary of prefixes prevents naming drift while still allowing growth. Adding
 new prefixes should be deliberate (via ADR update) rather than ad-hoc.
 
+The `std-` prefix gives public standards and standards-family publication repositories their own
+clear lane, separate from organization governance (`org-`), general publications and educational
+media (`pub-`), software (`sw-`), and tooling (`tool-`).
+
 ## Consequences
 
 ### Positive
 
 - Repository purpose is immediately clear from the name (software vs hardware vs publications vs
   tools).
+- Standards repositories are distinguishable from governance documents, publications, software, and
+  tools.
 - Names are shorter and more readable because the org name is not duplicated.
-- Scales cleanly as new products and publication lines appear.
+- Scales cleanly as new products, publication lines, and standard families appear.
 - Enables predictable automation and governance by repo type.
 
 ### Negative
@@ -121,6 +129,9 @@ new prefixes should be deliberate (via ADR update) rather than ad-hoc.
 - Edge cases will appear (repos spanning multiple artifact types) and can trigger debate.
 - Existing repos that include `techofourown` in their name may look “legacy” relative to the new
   rule.
+- Standards-heavy repos may require judgment about whether their primary artifact is a normative
+  standard (`std-`), a policy/governance record (`org-`), or educational/publication material
+  (`pub-`).
 
 ### Mitigation
 
@@ -130,6 +141,11 @@ new prefixes should be deliberate (via ADR update) rather than ad-hoc.
 - For legacy repos that include the org name, prefer **gradual, opportunistic renames** when the
   value is worth it. GitHub preserves redirects on rename; document the rename in the repo CHANGELOG
   or README.
+- For document-heavy repos, choose the prefix based on the primary artifact:
+  - `std-` for public normative standards and standards-family publication repositories
+  - `org-` for organizational governance, policy, and decision records
+  - `pub-` for publications, educational media, books, manuals, curricula, and similar public
+    teaching or media artifacts
 
 ---
 
@@ -157,7 +173,17 @@ new prefixes should be deliberate (via ADR update) rather than ad-hoc.
 
    Examples: `tool-av`, `org-control-plane`, `sec-disclosure`
 
-2) **Product repos (recommended when product context matters)**  
+2) **Standards**  
+   `"std-<standard-family>"`  
+   Where `<standard-family>` identifies a public normative standard family or the standards
+   publication system itself.
+
+   Examples: `std-publication-system`, `std-portable-application-kernel`
+
+   Formal standard numbers, part numbers, edition years, and provision identifiers belong in the
+   standard documents and their metadata, not in the repository name.
+
+3) **Product repos (recommended when product context matters)**  
    `"<type>-<product>-<component>"`
 
    Examples: `sw-ourbox-os`, `sw-ourbox-apps-demo`, `sw-ourbox-apps-hello-world`,
@@ -169,22 +195,22 @@ new prefixes should be deliberate (via ADR update) rather than ad-hoc.
    For application catalog repos, use:
    - `sw-<product>-catalog-<catalog>`
 
-3) **Explicitly shared repos (optional)**  
+4) **Explicitly shared repos (optional)**  
    `"<type>-common-<component>"`
 
    Examples: `tool-common-av`, `lib-common-crypto`
 
-4) **Images**
+5) **Images**
    ` "img-<product>-<device|role>[-<target>][-<variant>]"`
 
    Examples: `img-ourbox-matchbox`, `img-ourbox-tinderbox`, `img-ourbox-mini-rpi5-debug`
 
-5) **Firmware**  
+6) **Firmware**  
    ` "fw-<product>-<device|role>-<target>[-<variant>]"`
 
    Examples: `fw-ourbox-matchbox-rpi`, `fw-ourbox-ec-amd64`
 
-6) **Libraries / SDKs (optional language token)**  
+7) **Libraries / SDKs (optional language token)**  
    `"<lib|sdk>-<name>[-<lang>]"`  
    or product-scoped: `"<lib|sdk>-<product>-<name>[-<lang>]"`
 
@@ -201,6 +227,7 @@ The following prefixes are approved for repository names:
 - `sw-` — Software product repositories
 - `hw-` — Hardware design repositories
 - `pf-` — Product family repositories (cross-cutting family specs, surveys, decisions, naming, BOMs)
+- `std-` — Public normative standards and standards-family publication repositories
 - `img-` — Bootable image recipes and image build systems
 - `fw-` — Firmware repositories
 - `ops-` — Operations/deployment configuration repositories (e.g., GitOps)
@@ -246,6 +273,8 @@ Use a product token when it adds clarity. Do not use the org name as a token.
 Preferred examples (new scheme):
 
 - `org-control-plane`
+- `std-publication-system`
+- `std-portable-application-kernel`
 - `sw-ourbox-os`
 - `sw-ourbox-apps-demo`
 - `sw-ourbox-catalog-demo`
